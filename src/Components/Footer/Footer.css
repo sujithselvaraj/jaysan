@@ -1,89 +1,81 @@
+/* Footer Container */
 .footer {
     position: relative;
-    left: 0;
-    bottom: 0;
     width: 100%;
-}
-
-.copywright-footer {
-    background-color: #FFF;
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
     text-align: center;
-}
-.copywright-text {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
+
+/* Contact & Get-in-touch section */
 .contact-footer {
     display: flex;
-    background-color: black;
-    gap: 10px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
 }
-  
+
 .get-in-touch-footer {
-    background-color: black;
-    padding: 20px;
-    color: aliceblue;
     flex: 1;
-    min-width: 300px; 
-    margin: 40px;
-    text-align: center;
-}
-  
-@media (max-width: 600px) {
-    .contact-footer {
-      flex-direction: column;
-    }
-
-    .get-in-touch-footer{
-        margin: -10px;
-    }
+    min-width: 200px;
+    margin: 20px;
 }
 
+
+/* Contact Items */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Brochure Button */
 .brochure-btn {
     background-color: #FFD65A;
-    text-decoration: none;
     color: #333;
-    padding: 10px;
+    padding: 12px 18px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
 }
 
 .brochure-btn:hover {
     background-color: #FF9D23;
 }
 
-.download-icon {
-    width: 16px;
-    height: 16px;
-    padding-right: 10px;
+/* Social Media Icons */
+.follow-us {
+    margin-top: 20px;
 }
 
-.contact-item {
+.social-icons {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Adds space between icon and text */
-    margin-bottom: 8px;
-  }
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
 
 .social-icon {
-    height: 3rem;
-    width: 3rem;
     color: white;
-    padding-left: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.follow-us{
-    margin-top: 50px;
+.social-icon:hover {
+    color: #FFD65A;
+    transform: scale(1.1);
 }
 
-.location {
-    padding-bottom: 15px;
-}
 
-.brochure {
-    margin-top: 35px;
+/* Copyright Section */
+.copywright-footer {
+    background-color: #222;
+    padding: 15px 0;
+    margin-top: 5px;
 }

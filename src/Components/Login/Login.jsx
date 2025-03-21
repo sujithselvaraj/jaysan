@@ -1,5 +1,5 @@
 import React from 'react'
-import './Login.css'
+import './Login.scss'
 
 const Login = () => {
   return (
@@ -19,9 +19,7 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
         <p>Don't have an account?</p>
-        <a href='/SignUp'>
-           <p className='link'>Sign Up</p>
-        </a>
+      
       </form>
         
     
