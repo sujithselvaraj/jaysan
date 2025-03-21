@@ -26,7 +26,8 @@ const NavBar = () => {
         <li><a href='resources'>Resources</a></li> 
         <li><a  href="about" >Company</a></li> 
         <li><a href="career">Career</a></li>
-        <li><a href="dealers">Dealers</a></li>        
+        <li><a href="dealers">Dealers</a></li> 
+        <li><a href="about-us">About Us</a></li>         
         <li><a href="contact" className='lets-talk'>Let's Talk</a></li>
       </ul>
 

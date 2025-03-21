@@ -1,11 +1,26 @@
 import { useState } from "react";
-import "./ContactUs.scss";
+import "./ContactUs.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
 const ContactUs = () => {
-  const [purpose, setPurpose] = useState("");
+ 
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [purpose, setPurpose] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Select an option");
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+    setPurpose(option); // Update purpose state here
+    setIsOpen(false);
+};
 
   const faqs = [
     {
@@ -23,10 +38,14 @@ const ContactUs = () => {
   ];
 
   return (
+    <>
     <div className="contact-container">
+      <NavBar/>
       <br/>
       <br/>
-      <h2 className="contact-title">Thanks for contacting Jaysan Agri Industrial</h2>
+      <h2 className="contact-title">
+        {submitted ? "Thanks for contacting Jaysan Agri Industrial!" : "We will be glad to help you!"}
+      </h2>
 
       {/* FAQ Section */}
       <div className="faq-section">
@@ -41,18 +60,41 @@ const ContactUs = () => {
 
       {/* Purpose Dropdown */}
       {!purpose ? (
-        <div className="purpose-section">
-          <h3 className="purpose-title">What is the purpose of contacting us?</h3>
-          <select className="purpose-dropdown" onChange={(e) => setPurpose(e.target.value)}>
-            <option value="">Select an option</option>
-            <option value="Support">Complaint Registration</option>
-            <option value="Sales Enquiry">Sales Enquiry</option>
-            <option value="Dealer Partnership">Dealer Partnership Interest</option>
-            <option value="Contact">Other</option>
-          </select>
+    <div className="purpose-section">
+    <h3 className="purpose-title">What is the purpose of contacting us?</h3>
+
+    {/* ✅ Custom Dropdown */}
+    <div className={`dropdown ${isOpen ? "active" : ""}`}>
+      <button className="dropdown-btn" onClick={toggleDropdown}>
+        {selectedOption}
+      </button>
+
+      <div className="dropdown-content">
+        <div className="dropdown-item" onClick={() => handleSelect("Complaint Registration")}>
+          Complaint Registration
         </div>
+        <div className="dropdown-item" onClick={() => handleSelect("Sales Enquiry")}>
+          Sales Enquiry
+        </div>
+        <div className="dropdown-item" onClick={() => handleSelect("Support")}>
+          Support
+        </div>
+        <div className="dropdown-item" onClick={() => handleSelect("Dealer Partnership")}>
+          Dealer Partnership 
+        </div>
+        <div className="dropdown-item" onClick={() => handleSelect("Other")}>
+          Other
+        </div>
+      </div>
+    </div>
+  </div>
       ) : (
-        <form className="contact-form">
+        <form className="contact-form" 
+        onSubmit={(e) => {
+          e.preventDefault(); // Prevent page reload
+          setSubmitted(true); // Update state
+        }}
+        >
           <h3 className="form-title">Fill the form for {purpose}</h3>
 
           <label className="form-label">Name</label>
@@ -65,20 +107,28 @@ const ContactUs = () => {
           <input className="form-input" type="text" placeholder="Your Current Location" required />
 
           {purpose === "Support" && (
-            <>
-              <label className="form-label">Select the Machine</label>
-              <select className="form-input">
-                <option value="">-- Select Machine --</option>
-                <option value="tractor">Tractor</option>
-                <option value="harvester">Harvester</option>
-                <option value="baler">Baler</option>
-                <option value="plow">Plow</option>
-                <option value="seeder">Seeder</option>
-              </select>
+          <>
+         <div className="machine-selection">
+  <label className="machine-label">Select the Machine</label>
+  <div className="machine-dropdown-container">
+    <select className="machine-dropdown">
+      <option value="">-- Select Machine --</option>
+      <option value="tractor">Tractor</option>
+      <option value="harvester">Harvester</option>
+      <option value="baler">Baler</option>
+      <option value="plow">Plow</option>
+      <option value="seeder">Seeder</option>
+    </select>
+  </div>
+</div>
 
-              <label className="form-label">Issue</label>
-              <textarea className="form-textarea" placeholder="Describe your issue" required></textarea>
-            </>
+        
+          <div className="issue-description">
+            <label className="issue-label">Issue</label>
+            <textarea className="issue-textarea" placeholder="Describe your issue" required></textarea>
+          </div>
+        </>
+        
           )}
 
           {purpose === "Sales Enquiry" && (
@@ -112,7 +162,10 @@ const ContactUs = () => {
           loading="lazy"
         ></iframe>
       </div>
+    
     </div>
+    <Footer/>
+    </>
   );
 };
 

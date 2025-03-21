@@ -1,0 +1,154 @@
+/* 🎨 Color Palette */
+:root {
+  --primary-color: #4CAF50;  /* Green */
+  --secondary-color: #388E3C;
+  --background-color: #F1F8E9;
+  --border-color: #BDBDBD;
+  --text-color: #212121;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Centering the login form */
+
+.heading
+{
+  align-items: center;
+  justify-content: center;
+  margin-left: 140px;
+  margin-top: 2px;
+}
+
+/* ✅ Centering the login form */
+.login-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Full viewport height */
+  width: 100%;
+  padding: 10px;
+  scroll-behavior: inherit;
+  
+}
+
+/* ✅ Styling the login form */
+.login {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px var(--shadow-color);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login:hover {
+  transform: scale(1.02);
+}
+
+/* ✅ Styling form fields */
+.login div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Label Styling */
+.login label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+/* Input Styling */
+.login input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background: #F0F2F5;
+}
+
+.login input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.login input:hover {
+  background: #E9ECEF;
+}
+
+/* ✅ Button Styling */
+.login button {
+  width: 150px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login button:hover {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+.login button:active {
+  transform: scale(0.98);
+}
+
+/* ✅ Paragraph text */
+.login p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* ✅ Sign-Up Link Styling */
+.login a {
+  text-decoration: none;
+}
+
+.login .link {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.login .link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .login {
+    padding: 30px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    padding: 25px;
+  }
+
+  .login button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .login input {
+    padding: 10px;
+  }
+}
