@@ -1,0 +1,155 @@
+/* Container Styling */
+.dealer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+   
+
+  }
+  
+  /* Title */
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3F7D58;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Search Bar Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 400px;
+    margin: 20px auto;
+    width: 100%;
+  }
+  
+  /* Search Input */
+  .search-input {
+    width: 500px;
+    padding: 12px 40px 12px 12px; /* Space for icon */
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #FF9D23;
+    box-shadow: 0 0 10px rgba(255, 157, 35, 0.5);
+  }
+  
+  /* Search Icon */
+  .search-icon {
+    position: absolute;
+    right: 15px;
+    font-size: 25px;
+    color: #3F7D58;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .search-icon:hover {
+    color: #FF9D23;
+  }
+  
+  
+  /* Dealer List */
+  .dealer-list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Dealer Card */
+  .dealer-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    border: 2px solid #16C47F; /* Adds a thin border with theme color */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .dealer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: #FF9D23; /* Changes border on hover */
+  }
+  
+  
+  .dealer-card h3 {
+    margin-bottom: 10px;
+    color: #3F7D58;
+  }
+  
+  .dealer-card p {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* Button Styling */
+  .dealer-card button {
+    background: #F93827;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .dealer-card button:hover {
+    background: #C9271E;
+    transform: scale(1.05);
+  }
+  
+  /* Expanded Dealer Details */
+  .dealer-details {
+    margin-top: 15px;
+    padding: 12px;
+    background: #F9F9F9;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dealer-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .dealer-card {
+      width: 90%;
+    }
+  
+    .search-input {
+      width: 80%;
+    }
+  }
+  

@@ -1,24 +1,28 @@
 import React from 'react'
-import './Login.scss'
+import './Login.css'
+import NavBar from '../NavBar/NavBar'
 
 const Login = () => {
   return (
     <div className='login-div'>
+      <NavBar/>
         
+
 
 
 
         <form  className='login'>
         <div >
-          <label>Email-Id:</label>
+        <h2 className='heading'>Sign In</h2>
+          
           <input type="text" placeholder='Email-Id' required/>
         </div>
         <div>
-          <label>Password:</label>
+         
           <input type="password" placeholder='Password' required/>
         </div>
         <button type="submit">Login</button>
-        <p>Don't have an account?</p>
+       
       
       </form>
         
