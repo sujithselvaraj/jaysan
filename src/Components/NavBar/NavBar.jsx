@@ -26,12 +26,10 @@ const NavBar = () => {
         <li><a href='resources'>Resources</a></li> 
         <li><a  href="company" >Company</a></li> 
         <li><a href="career">Career</a></li>
-<<<<<<< HEAD
         <li><a href="dealers">Dealers</a></li>         
-=======
-        <li><a href="dealers">Dealers</a></li> 
-        <li><a href="about-us">About Us</a></li>         
->>>>>>> 0a845d1c099803be771991b8b886508cf079045f
+      
+               
+
         <li><a href="contact" className='lets-talk'>Let's Talk</a></li>
       </ul>
 
