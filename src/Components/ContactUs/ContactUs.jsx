@@ -13,7 +13,6 @@ const ContactUs = () => {
       <br></br>
       <h2>Thanks for contacting Jaysan Agri Industrial</h2>
    
-
       <br></br>
 
       <br></br>
@@ -26,7 +25,7 @@ const ContactUs = () => {
             <option value="">Select an option</option>
             <option value="Support">Complaint Registration</option>
             <option value="Sales Enquiry">Sales Enquiry</option>
-            <option value="Partnership">Dealer Patnership Interest</option>
+            <option value="Dealer Partnership">Dealer Patnership Interest</option>
             <option value="Contact">Other</option>
           </select>
         </div>
@@ -67,7 +66,7 @@ const ContactUs = () => {
             </>
           )}
 
-          {purpose === "Partnership" && (
+          {purpose === "Dealer Partnership" && (
             <>
               <label>Product Interest:</label>
               <input type="text" placeholder="Product name" required />
