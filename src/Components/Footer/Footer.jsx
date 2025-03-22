@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
                 <div className='contact-item' id='address-div'>
                   <img src='/Assests/icon-location.png' alt='' className='location'/>
-                  <p className='address'>80-1, 1, Valiyampalayam, S.S Garden, Vilankuruchi(Po),<br/> Coimbatore , Tamil Nadu 641035 ,India</p>
+                  <p className='address'>80-1, 1, Valiyampalayam, S.S Garden, Vilankuruchi(Po), Coimbatore , Tamil Nadu 641035 ,India</p>
                 </div>
             </div>
         </div>

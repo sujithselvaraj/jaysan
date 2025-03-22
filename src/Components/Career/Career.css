@@ -1,0 +1,104 @@
+.career {
+    background: #fff;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .career-div {
+    margin-top: 5%;
+    margin-left: 2%;
+    padding: 20px;
+    max-width: 430px;
+    width: 100%;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    display: flex;
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .career-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 550;
+    margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .submit-btn {
+    width: 30%;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #086ee6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 720px) {
+    .career{
+        flex-direction: column;
+    }
+
+    .career-div {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    
+    }
+
+    .career-text-color {
+        
+        padding-top: 50px;
+      }
+  }
+
+  .career-form-text {
+    
+    color: #fff;
+    margin: 9%;
+    margin-top: 12%;
+    padding-right: 20px;
+  }
+  .career-text-color {
+    background-color: #3c3c3b;
+  }
+
+  .career-form-text-para {
+    margin-top: 9%;
+    max-width: 500;
+    text-align: left;
+  }
+  
+  .career-text {
+    font-size: x-large;
+  }
+
