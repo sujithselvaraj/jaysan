@@ -1,0 +1,146 @@
+/* Container */
+.product-details-container {
+    max-width: 1400px; /* Increased width */
+    margin: auto;
+    padding: 30px;
+}
+
+/* Product Content - Larger Image & Info Layout */
+.product-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* More space for the image */
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+/* Image Styling */
+.product-image {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-height: 700px; /* Increased height */
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Product Info - Bigger Fonts */
+.product-info {
+    text-align: left;
+    padding: 20px;
+}
+
+/* Enlarged Subcategory Name */
+.product-info h2 {
+    font-size: 40px; /* Bigger font */
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Feature List with Tick Symbols */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    font-size: 22px; /* Bigger font */
+    color: #333;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li::before {
+    content: "✔";
+    color: green;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* Video Section */
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* Specifications Table */
+.specifications-table {
+    margin-top: 40px;
+}
+
+.specifications-table h3 {
+    font-size: 26px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.specifications-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specifications-table th,
+.specifications-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.specifications-table th {
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .product-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .product-info {
+        padding: 0;
+    }
+
+    .product-info h2 {
+        font-size: 32px;
+    }
+
+    .feature-list li {
+        font-size: 18px;
+    }
+
+    .product-image img {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-info h2 {
+        font-size: 28px;
+    }
+
+    .feature-list li {
+        font-size: 16px;
+    }
+
+    .video-container iframe {
+        height: 350px;
+    }
+}

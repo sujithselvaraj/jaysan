@@ -5,17 +5,7 @@
   --background-color: #F1F8E9;
   --border-color: #BDBDBD;
   --text-color: #212121;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-/* ✅ Centering the login form */
-
-.heading
-{
-  align-items: center;
-  justify-content: center;
-  margin-left: 140px;
-  margin-top: 2px;
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 /* ✅ Centering the login form */
@@ -23,54 +13,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Full viewport height */
+  height: 100vh;
   width: 100%;
-  padding: 10px;
-  scroll-behavior: inherit;
-  
+  background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover; 
 }
 
 /* ✅ Styling the login form */
 .login {
-  background: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px var(--shadow-color);
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px var(--shadow-color);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
   transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  position: relative;
 }
 
-.login:hover {
-  transform: scale(1.02);
+/* ✅ Background Image for the login card */
+.login::before {
+  content: "";
+  background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3; /* Adjust opacity for visibility */
+  border-radius: 15px;
 }
 
-/* ✅ Styling form fields */
-.login div {
+/* ✅ Heading Styling */
+.heading {
   margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Label Styling */
-.login label {
-  display: block;
-  font-size: 16px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 6px;
-  color: var(--text-color);
-  text-transform: uppercase;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 1;
 }
 
-/* Input Styling */
+/* ✅ Input Fields */
 .login input {
   width: 100%;
-  padding: 12px;
+  padding: 15px;
   border: 2px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  background: #F0F2F5;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent for visibility */
+  position: relative;
+  z-index: 1;
 }
 
 .login input:focus {
@@ -79,22 +74,21 @@
   outline: none;
 }
 
-.login input:hover {
-  background: #E9ECEF;
-}
-
 /* ✅ Button Styling */
 .login button {
-  width: 150px;
+  width: 100%;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
 }
 
 .login button:hover {
@@ -105,50 +99,25 @@
   transform: scale(0.98);
 }
 
-/* ✅ Paragraph text */
-.login p {
-  margin-top: 15px;
-  font-size: 16px;
-  color: var(--text-color);
-}
-
-/* ✅ Sign-Up Link Styling */
-.login a {
-  text-decoration: none;
-}
-
-.login .link {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-}
-
-.login .link:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-
 /* ✅ Responsive Design */
 @media (max-width: 768px) {
   .login {
-    padding: 30px;
+    padding: 40px;
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .login {
-    padding: 25px;
+    padding: 30px;
+  }
+
+  .login input {
+    padding: 12px;
   }
 
   .login button {
     font-size: 16px;
-    padding: 10px;
-  }
-
-  .login input {
     padding: 10px;
   }
 }

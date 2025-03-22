@@ -17,6 +17,7 @@ const Login = () => {
           
           <input type="text" placeholder='Email-Id' required/>
         </div>
+        <br/>
         <div>
          
           <input type="password" placeholder='Password' required/>
