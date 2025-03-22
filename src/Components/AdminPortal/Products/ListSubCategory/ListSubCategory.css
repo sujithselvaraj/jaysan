@@ -1,0 +1,51 @@
+.subcategory-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .subcategory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .subcategory-table th,
+  .subcategory-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .subcategory-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .update-btn,
+  .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .update-btn {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .update-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  

@@ -1,0 +1,151 @@
+/* General Container */
+.form-container {
+    width: 75%; /* Take 3/4 of the page */
+    margin: 0 auto; /* Center the form container */
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Card Form Styling */
+.card-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input Field */
+.input-field {
+    width: 100%; /* Full width to match dropzone */
+    max-width: 9050px; /* Optional: to limit the width to 290px */
+    padding: 12px; /* Consistent padding */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and borders in the total width */
+    background-color: #f8f8f8;
+}
+
+.input-field:focus {
+    border-color: #4A90E2; /* Change border color on focus */
+    outline: none;
+}
+
+/* Dropzone (File Input) */
+.dropzone {
+    width: 100%; /* Full width */
+    max-width: 915px; /* Optional: to match the input field's width */
+    min-height: 90px; /* Set a minimum height */
+    border: 2px dashed #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px; /* Margin between input and dropzone */
+    box-sizing: border-box; /* Include padding and borders in the total width */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.dropzone:hover {
+    border-color: #4A90E2;
+}
+
+.file-info {
+    margin-top: 10px;
+}
+
+.text-muted {
+    color: #777;
+    font-size: 1rem; /* Adjust if needed */
+    text-align: center; /* Ensure text is centered */
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    max-width: 915px;
+    padding: 14px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #357ABD;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .card-form {
+        padding: 20px;
+    }
+
+    /* Ensure consistent size for input fields */
+    .input-field, .dropzone {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .card-form {
+        padding: 15px;
+    }
+
+    /* Adjust input field padding and font size for smaller screens */
+    .input-field, .dropzone {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}

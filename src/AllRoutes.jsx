@@ -11,11 +11,19 @@ import AllCategory from './Components/Products/AllCategory';
 import SingleProduct from './Components/Products/SingleProduct';
 import ProductDetails from './Components/Products/ProductDetails';
 
+import Dashboard from './Components/AdminPortal/AdminDashboad/Dashboard';
+import AddProduct from './Components/AdminPortal/Products/AddProduct';
+import ListCategory from './Components/AdminPortal/Products/ListCategory/ListCategory';
+import ListSubCategory from './Components/AdminPortal/Products/ListSubCategory/ListSubCategory';
+import AddSubCategory from './Components/AdminPortal/Products/AddSubCategory';
+import { CategoryProvider } from './Components/AdminPortal/ContextApi/CategoryContext';
+
 
 
 
 const AllRoutes = () => {
     return (
+        <CategoryProvider>
         <BrowserRouter>
      
             <Routes>
@@ -27,13 +35,21 @@ const AllRoutes = () => {
                 <Route path='/contact' element={<ContactUs/>}/>
                 <Route path='/career' element={<Career/>}/>
                 <Route path='/dealers' element={<Dealer/>}/>
+                <Route path="/admin-dashboard" element={<Dashboard />} />
+                <Route path="/add-category" element={<AddProduct />} />
+<Route path="/update-category/:id" element={<AddProduct />} /> 
+                <Route path="/list-category" element={<ListCategory />} />
 
+                <Route path="/list-subcategories" element={<ListSubCategory />} />
+<Route path="/update-subcategory/:id" element={<AddSubCategory />} />
+<Route path="/add-subcategory" element={<AddSubCategory />} />
                 
 
                 <Route path="/login" element={<Login />} />  
             </Routes>
             
         </BrowserRouter>
+        </CategoryProvider>
     )
 }
 

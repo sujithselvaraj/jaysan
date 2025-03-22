@@ -104,8 +104,8 @@
 }
 
 .about-image {
-    width: 400px;
-    height: 400px;
+    width: 460px;
+    height: 490px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
