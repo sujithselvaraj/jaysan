@@ -9,12 +9,14 @@
     color: #333;
   }
   
+  /* Table container for responsiveness */
   .table-container {
     overflow-x: auto;
     margin: 0 auto;
     width: 90%;
   }
   
+  /* Table styles */
   .career-table {
     width: 100%;
     border-collapse: collapse;
@@ -23,22 +25,28 @@
     border-radius: 8px;
   }
   
-  .career-table th, .career-table td {
+  /* Table Header and Cell Styles */
+  .career-table th,
+  .career-table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
   }
   
+  /* Table Header */
   .career-table th {
     background-color: #333;
     color: white;
     font-weight: bold;
   }
   
+  /* Zebra Stripe Rows */
   .career-table tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
+  /* Download Link */
   .download-link {
     color: #007bff;
     text-decoration: none;
@@ -49,6 +57,7 @@
     text-decoration: underline;
   }
   
+  /* Delete Button */
   .delete-btn {
     background-color: #dc3545;
     color: white;
@@ -66,10 +75,63 @@
     background-color: #c82333;
   }
   
+  /* No Data Message */
   .no-data {
     text-align: center;
     font-weight: bold;
     padding: 20px;
     color: #777;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media screen and (max-width: 768px) {
+    .career-container {
+      padding: 10px;
+    }
+  
+    .career-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .career-table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .career-table th,
+    .career-table td {
+      font-size: 14px;
+      padding: 8px;
+      white-space: normal; /* Allow text wrapping */
+    }
+  
+    .delete-btn {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .career-title {
+      font-size: 18px;
+    }
+  
+    .career-table th,
+    .career-table td {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .delete-btn {
+      font-size: 10px;
+      padding: 5px 8px;
+    }
   }
   

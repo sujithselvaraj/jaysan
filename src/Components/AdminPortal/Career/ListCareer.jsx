@@ -35,7 +35,7 @@ const ListCareer = () => {
       <AdminNavBar />
       <h2 className="career-title">Career Applications</h2>
       <div className="table-container">
-        <table className="career-table">
+      <table className="career-table">
           <thead>
             <tr>
               <th>ID</th>
