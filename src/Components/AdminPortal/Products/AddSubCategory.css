@@ -174,3 +174,42 @@ h2.text-center {
     width: 100%;
   }
 }
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.feature-item input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.feature-item .delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feature-item .delete-button:hover {
+  background-color: #cc0000;
+}

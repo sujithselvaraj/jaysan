@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // To get 'id' from URL
-import './AddSubCategory.css';
+import { useParams } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'react-toastify';
 import { getAllCategories, addSubCategory, updateSubCategory, getSubCategoryById } from './ProductService';
 import Footer from '../../Footer/Footer';
 import AdminNavBar from '../AdminNavBar/AdminNavBar';
 import { CategoryProvider } from '../ContextApi/CategoryContext';
+import './AddSubCategory.css';
 
 const AddSubCategory = () => {
-  const { id } = useParams(); // Get 'id' from URL params
+  const { id } = useParams();
   const [formData, setFormData] = useState({
     subCategoryName: '',
     categoryId: '',
@@ -70,7 +70,7 @@ const AddSubCategory = () => {
     }));
   };
 
-  // Handle feature array
+  // Handle feature array (Add & Delete)
   const handleAddFeature = () => {
     setFormData((prevData) => ({
       ...prevData,
@@ -87,7 +87,16 @@ const AddSubCategory = () => {
     }));
   };
 
-  // Handle specification details (key-value pairs)
+  const handleDeleteFeature = (index) => {
+    const newFeatures = [...formData.features];
+    newFeatures.splice(index, 1);
+    setFormData((prevData) => ({
+      ...prevData,
+      features: newFeatures,
+    }));
+  };
+
+  // Handle specification details (Add, Delete, Modify)
   const handleAddSpecification = () => {
     setFormData((prevData) => ({
       ...prevData,
@@ -103,9 +112,17 @@ const AddSubCategory = () => {
       ),
     }));
   };
-  
 
-  // Handle submit (Add or Update)
+  const handleDeleteSpecification = (index) => {
+    const newSpecifications = [...formData.specificationDetails];
+    newSpecifications.splice(index, 1);
+    setFormData((prevData) => ({
+      ...prevData,
+      specificationDetails: newSpecifications,
+    }));
+  };
+
+  // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const subCategoryRequest = {
@@ -127,7 +144,6 @@ const AddSubCategory = () => {
         toast.success('SubCategory added successfully!');
       }
 
-      // Reset form after submission
       setFormData({
         subCategoryName: '',
         categoryId: '',
@@ -144,10 +160,10 @@ const AddSubCategory = () => {
 
   return (
     <div>
-        <CategoryProvider>
-        <AdminNavBar/>
-        </CategoryProvider>
-        
+      <CategoryProvider>
+        <AdminNavBar />
+      </CategoryProvider>
+      
       <br />
       <div className="form-container">
         <h2 className="text-center">{id ? 'Update SubCategory' : 'Add SubCategory'}</h2>
@@ -158,7 +174,6 @@ const AddSubCategory = () => {
               <input type="text" name="subCategoryName" className="input-field" value={formData.subCategoryName} onChange={handleChange} required />
             </div>
 
-            {/* Dropdown for Categories */}
             <div className="form-group">
               <label>Category</label>
               <select name="categoryId" className="input-field custom-dropdown" value={formData.categoryId} onChange={handleChange} required>
@@ -169,46 +184,34 @@ const AddSubCategory = () => {
               </select>
             </div>
 
-            {/* Features */}
             <div className="form-group">
               <label>Features</label>
               {formData.features.map((feature, index) => (
-                <input key={index} type="text" value={feature} onChange={(e) => handleFeatureChange(index, e)} className="input-field" placeholder={`Feature ${index + 1}`} required />
+                <div key={index} className="feature-item">
+                  <input type="text" placeholder="Enter new feature"value={feature} onChange={(e) => handleFeatureChange(index, e)} className="input-field" required />
+                  <button type="button" className="delete-button" onClick={() => handleDeleteFeature(index)}>✖</button>
+                </div>
               ))}
               <button type="button" className="submit-button" onClick={handleAddFeature}>Add Feature</button>
             </div>
+
             <div className="form-group">
               <label>Specifications</label>
               {formData.specificationDetails.map((spec, index) => (
-                <div key={index} className="specification-item input">
+                <div key={index} className="specification-item">
                   <input type="text" placeholder="Key" value={spec.key} onChange={(e) => handleSpecificationChange(index, 'key', e.target.value)} className="input-field" required />
                   <input type="text" placeholder="Value" value={spec.value} onChange={(e) => handleSpecificationChange(index, 'value', e.target.value)} className="input-field" required />
+                  <button type="button" className="delete-button" onClick={() => handleDeleteSpecification(index)}>✖</button>
                 </div>
               ))}
               <button type="button" className="submit-button" onClick={handleAddSpecification}>Add Specification</button>
             </div>
-            {/* YouTube Link */}
-            <div className="form-group">
-              <label>YouTube Link</label>
-              <input type="url" name="youtubeLink" className="input-field" value={formData.youtubeLink} onChange={handleChange} required />
-            </div>
-
-            {/* Image Upload */}
-            <div className="form-group">
-              <label>Image</label>
-              <div {...getRootProps({ className: 'dropzone' })}>
-                <input {...getInputProps()} />
-                {formData.imageFile ? <p><strong>{formData.imageFile.name}</strong></p> : <p>Drag & drop an image here, or click to select one</p>}
-              </div>
-            </div>
-
-            {error && <div className="error-message">{error}</div>}
 
             <button type="submit" className="submit-button">{id ? 'Update SubCategory' : 'Add SubCategory'}</button>
           </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

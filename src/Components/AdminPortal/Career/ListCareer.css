@@ -1,0 +1,75 @@
+.career-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .career-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  .career-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .career-table th, .career-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .career-table th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .career-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .download-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .download-link:hover {
+    text-decoration: underline;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .no-data {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    color: #777;
+  }
+  

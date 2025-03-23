@@ -17,6 +17,7 @@ import ListCategory from './Components/AdminPortal/Products/ListCategory/ListCat
 import ListSubCategory from './Components/AdminPortal/Products/ListSubCategory/ListSubCategory';
 import AddSubCategory from './Components/AdminPortal/Products/AddSubCategory';
 import { CategoryProvider } from './Components/AdminPortal/ContextApi/CategoryContext';
+import ListCareer from './Components/AdminPortal/Career/ListCareer';
 
 
 
@@ -36,6 +37,8 @@ const AllRoutes = () => {
                 <Route path='/career' element={<Career/>}/>
                 <Route path='/dealers' element={<Dealer/>}/>
                 <Route path="/admin-dashboard" element={<Dashboard />} />
+
+                <Route path="/admin-list-career" element={<ListCareer />} />
                 <Route path="/add-category" element={<AddProduct />} />
 <Route path="/update-category/:id" element={<AddProduct />} /> 
                 <Route path="/list-category" element={<ListCategory />} />

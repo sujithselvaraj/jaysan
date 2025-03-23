@@ -36,23 +36,20 @@ const AdminNavBar = () => {
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
         <li
           className="dropdown"
-          onMouseEnter={() => setIsProductDropdownOpen(true)}
-          onMouseLeave={() => setIsProductDropdownOpen(false)}
+          onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
         >
           <a href="#">Products ▾</a>
-          {isProductDropdownOpen && (
-            <ul className="dropdown-menu">
-              <li><a href="/add-category">Add Category</a></li>
-              <li><a href="/add-subcategory">Add SubCategory</a></li>
-              <li><a href="/list-category">List Category</a></li>
-              <li><a href="/list-subcategories">List SubCategory</a></li>
-            </ul>
-          )}
+          <ul className={`dropdown-menu ${isProductDropdownOpen ? "show" : ""}`}>
+            <li><a href="/add-category">Add Category</a></li>
+            <li><a href="/add-subcategory">Add SubCategory</a></li>
+            <li><a href="/list-category">List Category</a></li>
+            <li><a href="/list-subcategories">List SubCategory</a></li>
+          </ul>
         </li>
         <li><a href="events">Events</a></li>
         <li><a href="resources">Resources</a></li>
         <li><a href="about">Company</a></li>
-        <li><a href="career">Career</a></li>
+        <li><a href="/admin-list-career">Career</a></li>
         <li><a href="dealers">Dealers</a></li>
         <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
       </ul>
