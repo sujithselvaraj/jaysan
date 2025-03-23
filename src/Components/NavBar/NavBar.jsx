@@ -52,7 +52,7 @@ const NavBar = () => {
         <li><a href="/company">Company</a></li>
         <li><a href="/career">Career</a></li>
         <li><a href="/dealers">Dealers</a></li>
-        <li><a href="/gallery">Gallery</a></li>
+
         <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
       </ul>
 
