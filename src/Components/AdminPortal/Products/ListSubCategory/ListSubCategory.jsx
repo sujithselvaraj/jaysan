@@ -5,7 +5,7 @@ import { getAllSubCategories, deleteSubCategory } from "../ProductService"; // I
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./ListSubCategory.css"; // Add styling
-import { CategoryProvider } from "../../ContextApi/CategoryContext";
+
 
 const ListSubCategory = () => {
   const [subCategories, setSubCategories] = useState([]);
@@ -41,9 +41,9 @@ const ListSubCategory = () => {
 
   return (
     <div>
-        <CategoryProvider>
+      
         <AdminNavBar />
-        </CategoryProvider>
+       
     
       <div className="subcategory-container">
         <h2>Sub-Category List</h2>

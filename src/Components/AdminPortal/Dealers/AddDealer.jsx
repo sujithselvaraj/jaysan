@@ -72,24 +72,78 @@ const AddDealer = () => {
       <br />
       <br />
       
-      <div className="add-dealer-container">
+      <div className="add-dealer-updated-container">
         
         <h2>{id ? "Update Dealer" : "Add Dealer"}</h2>
         
         <form onSubmit={handleSubmit}>
-          <input type="text" name="dealerName" placeholder="Dealer Name" value={dealer.dealerName || ''} onChange={handleChange} required />
-          <input type="text" name="dealerPhoneNumber" placeholder="Phone Number" value={dealer.dealerPhoneNumber || ''} onChange={handleChange} required />
-          <input type="email" name="dealerEmail" placeholder="Email" value={dealer.dealerEmail || ''} onChange={handleChange} />
-          <input type="text" name="addressLine1" placeholder="Address Line 1" value={dealer.addressLine1 || ''} onChange={handleChange} required />
-          <input type="text" name="addressLine2" placeholder="Address Line 2" value={dealer.addressLine2 || ''} onChange={handleChange} />
-          <input type="text" name="dealerLocation" placeholder="Location" value={dealer.dealerLocation || ''} onChange={handleChange} required />
-          <input type="text" name="dealerState" placeholder="State" value={dealer.dealerState || ''} onChange={handleChange} required />
+          <input 
+            type="text" 
+            name="dealerName" 
+            placeholder="Dealer Name" 
+            value={dealer.dealerName || ''} 
+            onChange={handleChange} 
+            required 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="text" 
+            name="dealerPhoneNumber" 
+            placeholder="Phone Number" 
+            value={dealer.dealerPhoneNumber || ''} 
+            onChange={handleChange} 
+            required 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="email" 
+            name="dealerEmail" 
+            placeholder="Email" 
+            value={dealer.dealerEmail || ''} 
+            onChange={handleChange} 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="text" 
+            name="addressLine1" 
+            placeholder="Address Line 1" 
+            value={dealer.addressLine1 || ''} 
+            onChange={handleChange} 
+            required 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="text" 
+            name="addressLine2" 
+            placeholder="Address Line 2" 
+            value={dealer.addressLine2 || ''} 
+            onChange={handleChange} 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="text" 
+            name="dealerLocation" 
+            placeholder="Location" 
+            value={dealer.dealerLocation || ''} 
+            onChange={handleChange} 
+            required 
+            className="add-dealer-updated-input"
+          />
+          <input 
+            type="text" 
+            name="dealerState" 
+            placeholder="State" 
+            value={dealer.dealerState || ''} 
+            onChange={handleChange} 
+            required 
+            className="add-dealer-updated-input"
+          />
           
-          <button type="submit">{id ? "Update Dealer" : "Add Dealer"}</button>
+          <button type="submit" className="add-dealer-updated-button">{id ? "Update Dealer" : "Add Dealer"}</button>
         </form>
 
         {/* ✅ "All Dealers" Button to Navigate to the Dealer List */}
-        <button className="all-dealers-btn" onClick={() => navigate("/admin-list-dealers")}>All Dealers</button>
+        <button className="add-dealer-updated-all-dealers-btn" onClick={() => navigate("/admin-list-dealers")}>All Dealers</button>
       </div>
       <Footer />
     </div>

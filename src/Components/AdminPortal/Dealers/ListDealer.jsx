@@ -22,44 +22,46 @@ const ListDealer = () => {
   };
 
   const handleUpdate = (id) => {
-    navigate(`/admin-add-dealers/${id}`); // Redirect to AddDealer with dealer ID
+    navigate(`/admin-add-dealers/${id}`);
   };
 
   const handleAddDealer = () => {
-    navigate('/admin-add-dealers'); // Redirect to AddDealer page
+    navigate('/admin-add-dealers');
   };
 
   return (
     <div>
       <AdminNavBar />
-      <div className="dealer-list-container">
-        <h2>Dealer List</h2>
-        <button className="add-dealer-btn" onClick={handleAddDealer}>+ Add Dealer</button>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>State</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {dealers.map(dealer => (
-              <tr key={dealer.id}>
-                <td>{dealer.dealerName}</td>
-                <td>{dealer.dealerEmail}</td>
-                <td>{dealer.dealerPhoneNumber}</td>
-                <td>{dealer.dealerState}</td>
-                <td>
-                  <button className="update-btn" onClick={() => handleUpdate(dealer.id)}>Update</button>
-                  <button className="delete-btn" onClick={() => handleDelete(dealer.id)}>Delete</button>
-                </td>
+      <div className="dealer-container">
+        <h2 className="dealer-title">Dealer List</h2>
+        <button className="dealer-add-btn" onClick={handleAddDealer}>+ Add Dealer</button>
+        <div className="dealer-table-wrapper">
+          <table className="dealer-table">
+            <thead className="dealer-table-head">
+              <tr className="dealer-table-row">
+                <th className="dealer-table-header">Name</th>
+                <th className="dealer-table-header">Email</th>
+                <th className="dealer-table-header">Phone</th>
+                <th className="dealer-table-header">State</th>
+                <th className="dealer-table-header">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="dealer-table-body">
+              {dealers.map(dealer => (
+                <tr key={dealer.id} className="dealer-table-row">
+                  <td className="dealer-table-data">{dealer.dealerName}</td>
+                  <td className="dealer-table-data">{dealer.dealerEmail}</td>
+                  <td className="dealer-table-data">{dealer.dealerPhoneNumber}</td>
+                  <td className="dealer-table-data">{dealer.dealerState}</td>
+                  <td className="dealer-table-data dealer-action-btns">
+                    <button className="dealer-update-btn" onClick={() => handleUpdate(dealer.id)}>Update</button>
+                    <button className="dealer-delete-btn" onClick={() => handleDelete(dealer.id)}>Delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <Footer />
     </div>

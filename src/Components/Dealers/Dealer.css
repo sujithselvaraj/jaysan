@@ -1,5 +1,5 @@
 /* Main Container */
-.dealer-container {
+.dealer-updated-container {
   max-width: 1100px;
   margin: auto;
   padding: 20px;
@@ -7,16 +7,16 @@
 }
 
 /* Title Styling */
-.title {
+.dealer-updated-title {
   font-size: 28px;
   font-weight: bold;
-  color: #3F7D58;
+  color: #333;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
 /* Search Bar Container */
-.search-container {
+.dealer-updated-search-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 /* Search Input */
-.search-input {
+.dealer-updated-search-input {
   width: 500px;
   padding: 12px 40px 12px 12px; /* Space for icon */
   border: 2px solid black;
@@ -36,14 +36,14 @@
   transition: 0.3s;
 }
 
-.search-input:focus {
+.dealer-updated-search-input:focus {
   outline: none;
   border-color: #FF9D23;
   box-shadow: 0 0 10px rgba(255, 157, 35, 0.5);
 }
 
 /* Search Icon */
-.search-icon {
+.dealer-updated-search-icon {
   position: absolute;
   right: 15px;
   font-size: 25px;
@@ -52,12 +52,12 @@
   transition: 0.3s;
 }
 
-.search-icon:hover {
+.dealer-updated-search-icon:hover {
   color: #FF9D23;
 }
 
 /* Dealer List */
-.dealer-list {
+.dealer-updated-list {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +67,7 @@
 }
 
 /* Dealer Card */
-.dealer-card {
+.dealer-updated-card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,14 +83,14 @@
 }
 
 /* Hover Effect */
-.dealer-card:hover {
+.dealer-updated-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   border-color: #FF9D23;
 }
 
 /* Expanded Card */
-.dealer-card.expanded {
+.dealer-updated-card.dealer-updated-expanded {
   max-width: 320px; /* Prevents size change */
   border-color: #FF9D23;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -98,19 +98,19 @@
 }
 
 /* Dealer Name */
-.dealer-card h3 {
+.dealer-updated-card h3 {
   margin-bottom: 10px;
   color: #3F7D58;
 }
 
 /* Dealer Info */
-.dealer-card p {
+.dealer-updated-card p {
   color: #333;
   font-size: 14px;
 }
 
 /* Button Styling */
-.dealer-card button {
+.dealer-updated-card button {
   background: #F93827;
   color: white;
   border: none;
@@ -122,13 +122,13 @@
   transition: all 0.3s ease-in-out;
 }
 
-.dealer-card button:hover {
+.dealer-updated-card button:hover {
   background: #C9271E;
   transform: scale(1.05);
 }
 
 /* Expanded Dealer Details */
-.dealer-details {
+.dealer-updated-details {
   margin-top: 10px;
   padding: 12px;
   background: #F9F9F9;
@@ -138,7 +138,7 @@
 }
 
 /* Show Expanded Details */
-.dealer-card.expanded .dealer-details {
+.dealer-updated-card.dealer-updated-expanded .dealer-updated-details {
   display: block;
 }
 
@@ -156,16 +156,16 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .dealer-list {
+  .dealer-updated-list {
     flex-direction: column;
     align-items: center;
   }
 
-  .dealer-card {
+  .dealer-updated-card {
     width: 90%;
   }
 
-  .search-input {
+  .dealer-updated-search-input {
     width: 80%;
   }
 }

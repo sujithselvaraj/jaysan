@@ -50,7 +50,7 @@ const AdminNavBar = () => {
         <li><a href="resources">Resources</a></li>
         <li><a href="about">Company</a></li>
         <li><a href="/admin-list-career">Career</a></li>
-        <li><a href="dealers">Dealers</a></li>
+        <li><a href="/admin-list-dealers">Dealers</a></li>
         <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
         <li className="login-person">
         <button className="logout-btn" onClick={handleLogout}>Logout</button>

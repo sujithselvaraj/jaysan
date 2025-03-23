@@ -6,7 +6,7 @@ import AdminNavBar from "../../AdminNavBar/AdminNavBar";
 import Footer from "../../../Footer/Footer";
 import { deleteCategory } from "../ProductService";
 import { toast } from 'react-toastify';
-import { CategoryProvider } from "../../ContextApi/CategoryContext";
+
 const ListCategory = () => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -40,9 +40,9 @@ const ListCategory = () => {
   return (
     <>
       <div className="category-container">
-        <CategoryProvider>
+       
         <AdminNavBar />
-        </CategoryProvider>
+        
         
         <h2>Category List</h2>
         <table className="category-table">

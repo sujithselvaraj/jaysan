@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='footer'>
 
       <div className="contact-footer">
-        <div class="get-in-touch-footer">
+        <div className="get-in-touch-footer">
             <div>
               <h3>Contact</h3>
                 <div className='contact-item'>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
                 
 
-        <div class="get-in-touch-footer">
+        <div className="get-in-touch-footer">
           <div>
             <h3>Get In Touch</h3>
             <p>Your next big opportunity starts here – download our brochure today!</p>

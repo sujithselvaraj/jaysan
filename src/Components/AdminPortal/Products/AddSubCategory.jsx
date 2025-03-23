@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { getAllCategories, addSubCategory, updateSubCategory, getSubCategoryById } from './ProductService';
 import Footer from '../../Footer/Footer';
 import AdminNavBar from '../AdminNavBar/AdminNavBar';
-import { CategoryProvider } from '../ContextApi/CategoryContext';
+
 import './AddSubCategory.css';
 
 const AddSubCategory = () => {
@@ -160,9 +160,9 @@ const AddSubCategory = () => {
 
   return (
     <div>
-      <CategoryProvider>
+      
         <AdminNavBar />
-      </CategoryProvider>
+    
       
       <br />
       <div className="form-container">

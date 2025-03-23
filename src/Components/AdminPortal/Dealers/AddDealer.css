@@ -1,5 +1,5 @@
 /* Dealer Form Container - Increased Size */
-.add-dealer-container {
+.add-dealer-updated-container {
     max-width: 600px;
     margin: auto;
     padding: 30px;
@@ -10,14 +10,14 @@
 }
 
 /* Heading Style */
-h2 {
+.add-dealer-updated-container h2 {
     color: #3F7D58;
     font-size: 26px;
     font-weight: bold;
 }
 
 /* Form Styling */
-form {
+.add-dealer-updated-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -25,7 +25,7 @@ form {
 }
 
 /* Input Fields - Centered Properly */
-input {
+.add-dealer-updated-input {
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 6px;
@@ -36,7 +36,7 @@ input {
 }
 
 /* Submit Button */
-button {
+.add-dealer-updated-button {
     background: #333;
     color: white;
     padding: 12px;
@@ -51,13 +51,13 @@ button {
 }
 
 /* Submit Button Hover Effect */
-button:hover {
+.add-dealer-updated-button:hover {
     background: #FF9D23;
     transform: scale(1.05);
 }
 
 /* ✅ All Dealers Button Styling */
-.all-dealers-btn {
+.add-dealer-updated-all-dealers-btn {
     margin-top: 15px;
     background: #3F7D58;
     color: white;
@@ -72,19 +72,19 @@ button:hover {
     max-width: 500px;
 }
 
-.all-dealers-btn:hover {
+.add-dealer-updated-all-dealers-btn:hover {
     background: #876540;
     transform: scale(1.05);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 700px) {
-    .add-dealer-container {
+    .add-dealer-updated-container {
         max-width: 90%;
         padding: 20px;
     }
 
-    input, button {
+    .add-dealer-updated-input, .add-dealer-updated-button {
         max-width: 100%; /* Make input & button fully responsive */
         font-size: 14px;
         padding: 10px;

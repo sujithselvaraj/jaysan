@@ -7,7 +7,7 @@ import api from '../Reducers/AxiosConfig';
 
 const Dealer = () => {
   const [dealers, setDealers] = useState([]);
-  const [expandedIndex, setExpandedIndex] = useState(null); // Stores the index of the expanded card
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const [searchState, setSearchState] = useState('');
 
   useEffect(() => {
@@ -20,9 +20,8 @@ const Dealer = () => {
       });
   }, []);
 
-  // Function to handle expansion of one card at a time
   const handleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index); // Toggle between open and close
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   const filteredDealers = dealers.filter((dealer) =>
@@ -32,25 +31,23 @@ const Dealer = () => {
   return (
     <div>
       <NavBar />
-      <div className="dealer-container">
-        <h2 className="title">Our Valuable Dealers</h2>
+      <div className="dealer-updated-container">
+        <h2 className="dealer-updated-title">Our Valuable Dealers</h2>
         
-        {/* Search Bar */}
-        <div className="search-container">
+        <div className="dealer-updated-search-container">
           <input
             type="text"
             placeholder="Search by state..."
             value={searchState}
             onChange={(e) => setSearchState(e.target.value)}
-            className="search-input"
+            className="dealer-updated-search-input"
           />
-          <AiOutlineSearch className="search-icon" />
+          <AiOutlineSearch className="dealer-updated-search-icon" />
         </div>
 
-        {/* Dealer List */}
-        <div className="dealer-list">
+        <div className="dealer-updated-list">
           {filteredDealers.map((dealer, index) => (
-            <div key={index} className={`dealer-card ${expandedIndex === index ? 'expanded' : ''}`}>
+            <div key={index} className={`dealer-updated-card ${expandedIndex === index ? 'dealer-updated-expanded' : ''}`}>
               <h3>{dealer.dealerName}</h3>
               <p>Email: {dealer.dealerEmail}</p>
               <p>Phone: {dealer.dealerPhoneNumber}</p>
@@ -59,7 +56,7 @@ const Dealer = () => {
               </button>
 
               {expandedIndex === index && (
-                <div className="dealer-details">
+                <div className="dealer-updated-details">
                   <p>Address: {dealer.addressLine1}, {dealer.addressLine2}</p>
                   <p>Location: {dealer.dealerLocation}</p>
                   <p>State: {dealer.dealerState}</p>

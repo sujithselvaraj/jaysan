@@ -2,6 +2,9 @@ import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 import './Home.css'; // Make sure to create this CSS file
+import StatsSection from './StatsSection';
+import ImageSlider from './ImageSlider';
+import VideoSection from './VideoSection';
 
 const Home = () => {
   return (
@@ -54,6 +57,12 @@ const Home = () => {
 </div>
 
       </div>
+      <ImageSlider/>
+      <br/>
+
+      <VideoSection/>
+      <br/>
+      <StatsSection/>
 
       <Footer />
     </div>

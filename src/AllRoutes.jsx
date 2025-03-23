@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Router, Routes} from "react-router-dom";
 import Home from './Components/Home/Home';
 
 
@@ -16,17 +16,18 @@ import AddProduct from './Components/AdminPortal/Products/AddProduct';
 import ListCategory from './Components/AdminPortal/Products/ListCategory/ListCategory';
 import ListSubCategory from './Components/AdminPortal/Products/ListSubCategory/ListSubCategory';
 import AddSubCategory from './Components/AdminPortal/Products/AddSubCategory';
-import { CategoryProvider } from './Components/AdminPortal/ContextApi/CategoryContext';
+
 import ListCareer from './Components/AdminPortal/Career/ListCareer';
 import ListDealer from './Components/AdminPortal/Dealers/ListDealer';
 import AddDealer from './Components/AdminPortal/Dealers/AddDealer';
+import Gallery from './Components/Gallery/Gallery';
 
 
 
 
 const AllRoutes = () => {
     return (
-        <CategoryProvider>
+       
         <BrowserRouter>
      
             <Routes>
@@ -37,13 +38,14 @@ const AllRoutes = () => {
                 <Route path="/subcategory/:id" element={<ProductDetails />} />  
                 <Route path='/contact' element={<ContactUs/>}/>
                 <Route path='/career' element={<Career/>}/>
-                <Route path='/dealers' element={<Dealer/>}/>
+                <Route path='/dealers' element={<Dealer/>}/> 
+                <Route path='/gallery' element={<Gallery/>}/>
                 <Route path="/admin-dashboard" element={<Dashboard />} />
 
                 <Route path="/admin-list-career" element={<ListCareer />} />
 
 
-                <Route path="/admin-add-dealers" element={<AddDealer />} />
+                <Route path="/admin-add-dealers" element={<AddDealer />} /> 
 
                 <Route path="/admin-add-dealers/:id" element={<AddDealer />} />
                 <Route path="/admin-list-dealers" element={<ListDealer />} />
@@ -60,7 +62,7 @@ const AllRoutes = () => {
             </Routes>
             
         </BrowserRouter>
-        </CategoryProvider>
+       
     )
 }
 

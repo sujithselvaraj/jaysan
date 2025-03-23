@@ -6,8 +6,8 @@ import './AddProduct.css';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
-import AddSubCategory from './AddSubCategory';
-import { CategoryProvider } from '../ContextApi/CategoryContext';
+
+
 
 const AddProduct = () => {
   const { id } = useParams(); // Get category ID from URL params
@@ -69,9 +69,9 @@ const AddProduct = () => {
 
   return (
     <div>
-      <CategoryProvider>
+      
       <AdminNavBar />
-      </CategoryProvider>
+     
     
       <br />
       <div className="form-container">
