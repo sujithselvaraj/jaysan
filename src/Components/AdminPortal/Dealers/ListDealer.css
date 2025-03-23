@@ -1,0 +1,159 @@
+/* General container styling */
+.dealer-list-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Heading */
+  h2 {
+    color: #3F7D58;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Add Dealer Button */
+  .add-dealer-btn {
+    background-color: #3F7D58;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .add-dealer-btn:hover {
+    background-color: #2E5E43;
+  }
+  
+  /* Update Button */
+  .update-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .update-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: #F93827;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background-color: #C9271E;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dealer-list-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    /* Responsive Table */
+    table {
+      border: none;
+    }
+  
+    /* Show table title above each row */
+    thead {
+      display: none;
+    }
+  
+    tbody, tr, td {
+      display: block;
+      width: 100%;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #f8f8f8;
+    }
+  
+    td {
+      text-align: left;
+      padding: 10px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    td:last-child {
+      border-bottom: none;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #333;
+      text-transform: capitalize;
+    }
+  
+    /* Buttons should have proper spacing */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+  
+    .update-btn, .delete-btn {
+      width: 48%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    /* Input and Button Spacing */
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  
+    .add-dealer-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+    }
+  }
+  

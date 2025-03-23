@@ -18,6 +18,8 @@ import ListSubCategory from './Components/AdminPortal/Products/ListSubCategory/L
 import AddSubCategory from './Components/AdminPortal/Products/AddSubCategory';
 import { CategoryProvider } from './Components/AdminPortal/ContextApi/CategoryContext';
 import ListCareer from './Components/AdminPortal/Career/ListCareer';
+import ListDealer from './Components/AdminPortal/Dealers/ListDealer';
+import AddDealer from './Components/AdminPortal/Dealers/AddDealer';
 
 
 
@@ -39,13 +41,19 @@ const AllRoutes = () => {
                 <Route path="/admin-dashboard" element={<Dashboard />} />
 
                 <Route path="/admin-list-career" element={<ListCareer />} />
+
+
+                <Route path="/admin-add-dealers" element={<AddDealer />} />
+
+                <Route path="/admin-add-dealers/:id" element={<AddDealer />} />
+                <Route path="/admin-list-dealers" element={<ListDealer />} />
                 <Route path="/add-category" element={<AddProduct />} />
-<Route path="/update-category/:id" element={<AddProduct />} /> 
+                <Route path="/update-category/:id" element={<AddProduct />} /> 
                 <Route path="/list-category" element={<ListCategory />} />
 
                 <Route path="/list-subcategories" element={<ListSubCategory />} />
-<Route path="/update-subcategory/:id" element={<AddSubCategory />} />
-<Route path="/add-subcategory" element={<AddSubCategory />} />
+               < Route path="/update-subcategory/:id" element={<AddSubCategory />} />
+               <Route path="/add-subcategory" element={<AddSubCategory />} />
                 
 
                 <Route path="/login" element={<Login />} />  

@@ -49,7 +49,7 @@ const Home = () => {
         {/* Right Section - Image */}
         <div className="right-section">
   <div className="image-wrappe">
-    <img src="/Assests/agri.jpeg" alt="Experts in Growth" className="about-image" />
+    <img src="/Assests/baler_no_back.png" alt="Experts in Growth" className="about-image" />
   </div>
 </div>
 

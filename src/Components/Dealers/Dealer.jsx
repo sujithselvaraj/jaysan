@@ -7,7 +7,7 @@ import api from '../Reducers/AxiosConfig';
 
 const Dealer = () => {
   const [dealers, setDealers] = useState([]);
-  const [expanded, setExpanded] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(null); // Stores the index of the expanded card
   const [searchState, setSearchState] = useState('');
 
   useEffect(() => {
@@ -20,8 +20,9 @@ const Dealer = () => {
       });
   }, []);
 
+  // Function to handle expansion of one card at a time
   const handleExpand = (index) => {
-    setExpanded(expanded === index ? null : index);
+    setExpandedIndex(expandedIndex === index ? null : index); // Toggle between open and close
   };
 
   const filteredDealers = dealers.filter((dealer) =>
@@ -36,29 +37,28 @@ const Dealer = () => {
         
         {/* Search Bar */}
         <div className="search-container">
-  <input
-    type="text"
-    placeholder="Search by state..."
-    value={searchState}
-    onChange={(e) => setSearchState(e.target.value)}
-    className="search-input"
-  />
-  <AiOutlineSearch className="search-icon" />
-</div>
+          <input
+            type="text"
+            placeholder="Search by state..."
+            value={searchState}
+            onChange={(e) => setSearchState(e.target.value)}
+            className="search-input"
+          />
+          <AiOutlineSearch className="search-icon" />
+        </div>
 
-        
-
+        {/* Dealer List */}
         <div className="dealer-list">
           {filteredDealers.map((dealer, index) => (
-            <div key={index} className="dealer-card">
+            <div key={index} className={`dealer-card ${expandedIndex === index ? 'expanded' : ''}`}>
               <h3>{dealer.dealerName}</h3>
               <p>Email: {dealer.dealerEmail}</p>
               <p>Phone: {dealer.dealerPhoneNumber}</p>
               <button onClick={() => handleExpand(index)}>
-                {expanded === index ? 'View Less' : 'View More'}
+                {expandedIndex === index ? 'View Less' : 'View More'}
               </button>
 
-              {expanded === index && (
+              {expandedIndex === index && (
                 <div className="dealer-details">
                   <p>Address: {dealer.addressLine1}, {dealer.addressLine2}</p>
                   <p>Location: {dealer.dealerLocation}</p>
@@ -69,7 +69,7 @@ const Dealer = () => {
           ))}
         </div>
       </div>
-      <br/>
+      <br />
       <Footer />
     </div>
   );

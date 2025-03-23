@@ -52,11 +52,12 @@ const AdminNavBar = () => {
         <li><a href="/admin-list-career">Career</a></li>
         <li><a href="dealers">Dealers</a></li>
         <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
+        <li className="login-person">
+        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      </li>
       </ul>
 
-      <div className="login-person">
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
-      </div>
+     
     </nav>
   );
 };
