@@ -1,15 +1,47 @@
+<<<<<<< HEAD
+=======
+/* 🎨 Color Palette */
+:root {
+  --primary-color: #4CAF50;  /* Green */
+  --secondary-color: #388E3C;
+  --background-color: #F1F8E9;
+  --border-color: #BDBDBD;
+  --text-color: #212121;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Centering the login form */
+
+.heading
+{
+  align-items: center;
+  justify-content: center;
+  margin-left: 140px;
+  margin-top: 2px;
+}
+
+>>>>>>> 4432f38 (Add About US page)
 /* ✅ Centering the login form */
 .login-div {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   height: 100vh;
   width: 100%;
   background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover; 
+=======
+  height: 80vh; /* Full viewport height */
+  width: 100%;
+  padding: 10px;
+  scroll-behavior: inherit;
+  
+>>>>>>> 4432f38 (Add About US page)
 }
 
 /* ✅ Styling the login form */
 .login {
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
   padding: 50px;
   border-radius: 15px;
@@ -60,19 +92,76 @@
 
 .login input:focus {
   border-color: #4CAF50;
+=======
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px var(--shadow-color);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login:hover {
+  transform: scale(1.02);
+}
+
+/* ✅ Styling form fields */
+.login div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Label Styling */
+.login label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+/* Input Styling */
+.login input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background: #F0F2F5;
+}
+
+.login input:focus {
+  border-color: var(--primary-color);
+>>>>>>> 4432f38 (Add About US page)
   box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.5);
   outline: none;
 }
 
+<<<<<<< HEAD
 /* ✅ Button Styling */
 .login button {
   width: 100%;
   background: linear-gradient(45deg, #4CAF50, #388E3C);
+=======
+.login input:hover {
+  background: #E9ECEF;
+}
+
+/* ✅ Button Styling */
+.login button {
+  width: 150px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+>>>>>>> 4432f38 (Add About US page)
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding: 12px;
   border: none;
+<<<<<<< HEAD
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -83,31 +172,84 @@
 
 .login button:hover {
   background: linear-gradient(45deg, #388E3C, #4CAF50);
+=======
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login button:hover {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+>>>>>>> 4432f38 (Add About US page)
 }
 
 .login button:active {
   transform: scale(0.98);
 }
 
+<<<<<<< HEAD
 /* ✅ Responsive Design */
 @media (max-width: 768px) {
   .login {
     padding: 40px;
+=======
+/* ✅ Paragraph text */
+.login p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* ✅ Sign-Up Link Styling */
+.login a {
+  text-decoration: none;
+}
+
+.login .link {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.login .link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .login {
+    padding: 30px;
+>>>>>>> 4432f38 (Add About US page)
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .login {
+<<<<<<< HEAD
     padding: 30px;
   }
 
   .login input {
     padding: 12px;
+=======
+    padding: 25px;
+>>>>>>> 4432f38 (Add About US page)
   }
 
   .login button {
     font-size: 16px;
     padding: 10px;
   }
+<<<<<<< HEAD
 }
+=======
+
+  .login input {
+    padding: 10px;
+  }
+}
+>>>>>>> 4432f38 (Add About US page)

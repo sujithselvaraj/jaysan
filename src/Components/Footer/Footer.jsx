@@ -6,7 +6,11 @@ const Footer = () => {
     <div className='footer'>
 
       <div className="contact-footer">
+<<<<<<< HEAD
         <div className="get-in-touch-footer">
+=======
+        <div class="get-in-touch-footer">
+>>>>>>> 4432f38 (Add About US page)
             <div>
               <h3>Contact</h3>
                 <div className='contact-item'>
@@ -22,12 +26,42 @@ const Footer = () => {
                 </div>
                 <div className='contact-item' id='address-div'>
                   <img src='/Assests/icon-location.png' alt='' className='location'/>
+<<<<<<< HEAD
                   <p className='address'>80-1, 1, Valiyampalayam, S.S Garden, Vilankuruchi(Po), Coimbatore , Tamil Nadu 641035 ,India</p>
+                </div>
+            </div>
+=======
+                  <p className='address'>80-1, 1, Valiyampalayam, S.S Garden, Vilankuruchi(Po),<br/> Coimbatore , Tamil Nadu 641035 ,India</p>
                 </div>
             </div>
         </div>
                 
 
+        <div class="get-in-touch-footer">
+          <div>
+            <h3>Get In Touch</h3>
+            <p>Your next big opportunity starts here – download our brochure today!</p>
+            <div className='brochure'>
+              <a href="/Assests/Jaysan_brochure.pdf" download className="brochure-btn">
+                <img src="/Assests/download.svg" alt="Download" className="download-icon" />
+                Download Brochure
+              </a>
+             </div>
+          </div>
+          <div className='follow-us'>
+            <h3>Follow us on</h3>
+            <div>
+              <a href= "https://www.facebook.com/profile.php?id=61559346638446&amp;amp;amp;amp;amp;amp;amp;mibextid=ZbWKwL"><img src="/Assests/icon-facebook.jpeg" alt="fb" className="social-icon" /></a>
+              <a href= "https://www.instagram.com/jaysan.agri?igsh=MXZhN3kyMmtncmZkaQ=="><img src="/Assests/icon-instagram.jpeg" alt="insta" className="social-icon"/></a>
+              <a href= "https://youtube.com/@jaysanagri366?si=EkCNO6E6i61kXLZm"><img src="/Assests/icon-youtube.jpeg" alt="youtube" className="social-icon" /></a>
+              <a href="linkedin"><img src="/Assests/icon-linkedin.jpeg" alt="linkedin" className="social-icon"/></a>
+            </div>
+          </div>
+>>>>>>> 4432f38 (Add About US page)
+        </div>
+                
+
+<<<<<<< HEAD
         <div className="get-in-touch-footer">
           <div>
             <h3>Get In Touch</h3>
@@ -50,6 +84,8 @@ const Footer = () => {
           </div>
         </div>
 
+=======
+>>>>>>> 4432f38 (Add About US page)
       </div>
 
       <div className="copywright-footer">

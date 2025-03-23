@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from '../NavBar/NavBar';
+=======
+import React from 'react'
+import './Login.css'
+import NavBar from '../NavBar/NavBar'
+>>>>>>> 4432f38 (Add About US page)
 
 const Login = () => {
   const [username, setUsername] = useState('');  // ✅ Use "username" instead of "email"
@@ -35,6 +41,7 @@ const Login = () => {
 
   return (
     <div className='login-div'>
+<<<<<<< HEAD
       <NavBar />
       <form className='login' onSubmit={handleSubmit}>
         <h2 className='heading'>Sign In</h2>
@@ -55,6 +62,27 @@ const Login = () => {
         />
         <br />
         <button type="submit">Login</button>
+=======
+      <NavBar/>
+        
+
+
+
+
+        <form  className='login'>
+        <div >
+        <h2 className='heading'>Sign In</h2>
+          
+          <input type="text" placeholder='Email-Id' required/>
+        </div>
+        <div>
+         
+          <input type="password" placeholder='Password' required/>
+        </div>
+        <button type="submit">Login</button>
+       
+      
+>>>>>>> 4432f38 (Add About US page)
       </form>
     </div>
   );
