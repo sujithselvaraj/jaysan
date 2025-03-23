@@ -1,102 +1,33 @@
-<<<<<<< HEAD
-=======
 /* 🎨 Color Palette */
-:root {
-  --primary-color: #4CAF50;  /* Green */
-  --secondary-color: #388E3C;
-  --background-color: #F1F8E9;
-  --border-color: #BDBDBD;
-  --text-color: #212121;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
+/* Removed variables and directly applied colors */
 
 /* ✅ Centering the login form */
-
-.heading
-{
+.heading {
   align-items: center;
   justify-content: center;
-  margin-left: 140px;
+  margin-left: 30px;
   margin-top: 2px;
+
 }
 
->>>>>>> 4432f38 (Add About US page)
 /* ✅ Centering the login form */
 .login-div {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  height: 100vh;
-  width: 100%;
   background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover; 
-=======
-  height: 80vh; /* Full viewport height */
+  height: 80vh;
   width: 100%;
   padding: 10px;
   scroll-behavior: inherit;
-  
->>>>>>> 4432f38 (Add About US page)
 }
 
 /* ✅ Styling the login form */
 .login {
-<<<<<<< HEAD
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  padding: 50px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  backdrop-filter: blur(10px);
-  position: relative;
-}
-
-/* ✅ Background Image for the login card */
-.login::before {
-  content: "";
-  background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3; /* Adjust opacity for visibility */
-  border-radius: 15px;
-}
-
-/* ✅ Heading Styling */
-.heading {
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #4CAF50;
-  position: relative;
-  z-index: 1;
-}
-
-/* ✅ Input Fields */
-.login input {
-  width: 100%;
-  padding: 15px;
-  border: 2px solid #BDBDBD;
-  border-radius: 10px;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent for visibility */
-  position: relative;
-  z-index: 1;
-}
-
-.login input:focus {
-  border-color: #4CAF50;
-=======
-  background: #fff;
+  background: #ffffff; /* White */
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0px 5px 15px var(--shadow-color);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -119,85 +50,66 @@
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 6px;
-  color: var(--text-color);
+  margin-left: 90px;
+  color: #212121; /* Dark grayish */
   text-transform: uppercase;
 }
 
 /* Input Styling */
 .login input {
-  width: 100%;
+  width: 350px;
   padding: 12px;
-  border: 2px solid var(--border-color);
+  border: 2px solid #bdbdbd; /* Gray */
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  background: #F0F2F5;
+  background: #f0f2f5; /* Light gray */
 }
 
 .login input:focus {
-  border-color: var(--primary-color);
->>>>>>> 4432f38 (Add About US page)
+  border-color: #4caf50; /* Green */
   box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.5);
   outline: none;
 }
 
-<<<<<<< HEAD
-/* ✅ Button Styling */
-.login button {
-  width: 100%;
-  background: linear-gradient(45deg, #4CAF50, #388E3C);
-=======
 .login input:hover {
-  background: #E9ECEF;
+  background: #e9ecef; /* Slightly darker gray */
 }
 
 /* ✅ Button Styling */
+/* ✅ Centering the login button */
 .login button {
-  width: 150px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
->>>>>>> 4432f38 (Add About US page)
-  color: white;
+  width: 100%;
+  max-width: 200px; /* Limits button width */
+  background: linear-gradient(45deg, #4caf50, #388e3c); /* Green Gradient */
+  color: black;
   font-size: 18px;
   font-weight: bold;
   padding: 12px;
   border: none;
-<<<<<<< HEAD
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-top: 15px;
-  position: relative;
-  z-index: 1;
+  margin: 15px auto 0; /* Centers button */
+  display: block; /* Makes sure it takes full width */
+  text-align: center;
 }
 
+/* ✅ Hover & Active effects */
 .login button:hover {
-  background: linear-gradient(45deg, #388E3C, #4CAF50);
-=======
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.login button:hover {
-  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
->>>>>>> 4432f38 (Add About US page)
+  background: linear-gradient(45deg, #388e3c, #4caf50);
 }
 
 .login button:active {
   transform: scale(0.98);
 }
 
-<<<<<<< HEAD
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-  .login {
-    padding: 40px;
-=======
+
 /* ✅ Paragraph text */
 .login p {
   margin-top: 15px;
   font-size: 16px;
-  color: var(--text-color);
+  color: #212121; /* Dark gray */
 }
 
 /* ✅ Sign-Up Link Styling */
@@ -208,13 +120,13 @@
 .login .link {
   font-size: 16px;
   font-weight: bold;
-  color: var(--primary-color);
+  color: #4caf50; /* Green */
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
 .login .link:hover {
-  color: var(--secondary-color);
+  color: #388e3c; /* Darker Green */
   text-decoration: underline;
 }
 
@@ -222,34 +134,21 @@
 @media (max-width: 768px) {
   .login {
     padding: 30px;
->>>>>>> 4432f38 (Add About US page)
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .login {
-<<<<<<< HEAD
-    padding: 30px;
-  }
-
-  .login input {
-    padding: 12px;
-=======
     padding: 25px;
->>>>>>> 4432f38 (Add About US page)
   }
 
   .login button {
     font-size: 16px;
     padding: 10px;
   }
-<<<<<<< HEAD
-}
-=======
 
   .login input {
     padding: 10px;
   }
 }
->>>>>>> 4432f38 (Add About US page)

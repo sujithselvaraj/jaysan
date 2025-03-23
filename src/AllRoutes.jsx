@@ -1,13 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route, Router, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './Components/Home/Home';
 
+//import Products from './Components/Products/Products';
 
 import ContactUs from './Components/ContactUs/ContactUs';
 import Career from './Components/Career/Career';
 import Login from './Components/Login/Login';
 import Dealer from './Components/Dealers/Dealer';
-<<<<<<< HEAD
+
 import AllCategory from './Components/Products/AllCategory';
 import SingleProduct from './Components/Products/SingleProduct';
 import ProductDetails from './Components/Products/ProductDetails';
@@ -23,8 +24,9 @@ import ListDealer from './Components/AdminPortal/Dealers/ListDealer';
 import AddDealer from './Components/AdminPortal/Dealers/AddDealer';
 import Gallery from './Components/Gallery/Gallery';
 
-=======
->>>>>>> 4432f38 (Add About US page)
+
+
+
 
 
 
@@ -36,12 +38,15 @@ const AllRoutes = () => {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 
+
                 <Route path="/categories" element={<AllCategory />} />
                 <Route path="/category/:id" element={<SingleProduct />} />
                 <Route path="/subcategory/:id" element={<ProductDetails />} />  
+
+                {/*<Route path="/products" element={<Products />} /> */}
+ 
                 <Route path='/contact' element={<ContactUs/>}/>
                 <Route path='/career' element={<Career/>}/>
-<<<<<<< HEAD
                 <Route path='/dealers' element={<Dealer/>}/> 
                 <Route path='/gallery' element={<Gallery/>}/>
                 <Route path="/admin-dashboard" element={<Dashboard />} />
@@ -63,11 +68,11 @@ const AllRoutes = () => {
                 
 
                 <Route path="/login" element={<Login />} />  
-=======
+
                 <Route path='/dealers' element={<Dealer/>}/>
-                <Route path='/about-us' element={<AboutUs/>}/>
+                
                 <Route path='/login' element={<Login/>}/>
->>>>>>> 4432f38 (Add About US page)
+
             </Routes>
             
         </BrowserRouter>

@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from '../NavBar/NavBar';
-=======
-import React from 'react'
-import './Login.css'
-import NavBar from '../NavBar/NavBar'
->>>>>>> 4432f38 (Add About US page)
+import Footer from '../Footer/Footer';
 
 const Login = () => {
-  const [username, setUsername] = useState('');  // ✅ Use "username" instead of "email"
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -18,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     
     const formData = new URLSearchParams();
-    formData.append('username', username);  // ✅ Match Spring Security username field
+    formData.append('username', username);
     formData.append('password', password);
 
     try {
@@ -26,11 +21,11 @@ const Login = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData,
-        credentials: 'include'  // ✅ Important for session-based authentication
+        credentials: 'include'
       });
 
       if (response.ok) {
-        navigate('/admin-dashboard');  // ✅ Redirect after successful login
+        navigate('/admin-dashboard');
       } else {
         alert('Invalid credentials!');
       }
@@ -40,14 +35,14 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className='login-div'>
-<<<<<<< HEAD
       <NavBar />
       <form className='login' onSubmit={handleSubmit}>
         <h2 className='heading'>Sign In</h2>
         <input 
           type="text" 
-          placeholder='Username'  // ✅ Match backend username field
+          placeholder='Username'  
           required 
           value={username} 
           onChange={(e) => setUsername(e.target.value)}
@@ -62,29 +57,10 @@ const Login = () => {
         />
         <br />
         <button type="submit">Login</button>
-=======
-      <NavBar/>
-        
-
-
-
-
-        <form  className='login'>
-        <div >
-        <h2 className='heading'>Sign In</h2>
-          
-          <input type="text" placeholder='Email-Id' required/>
-        </div>
-        <div>
-         
-          <input type="password" placeholder='Password' required/>
-        </div>
-        <button type="submit">Login</button>
-       
-      
->>>>>>> 4432f38 (Add About US page)
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 
