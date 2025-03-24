@@ -24,7 +24,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 50px;
     z-index: 0;
 }
 
@@ -69,7 +68,7 @@
 
 .info-icon {
     width: 100px;
-    height: 100px;
+    height: 85px;
 }
 
 .info-text h2 {
@@ -79,7 +78,7 @@
 
 .info-text p {
     color: #666;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 /* Right Section - Image */
