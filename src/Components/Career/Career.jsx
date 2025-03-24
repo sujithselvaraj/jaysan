@@ -64,7 +64,7 @@ const Career = () => {
             <h1>Careers</h1>
             <div className="career-form-text-para">
               <p className="career-text">
-                We value talented and hardworking people. Our team is our biggest strength, and we create a friendly workplace where everyone can grow.
+                We value talented and hardworking people. Our team is our biggest strength, and we create a friendly workplace where everyone can grow. If you're looking for a great career, we have opportunities for you!
               </p>
               <h5 className="career-text">
                 Fill out the form, and our team will contact you soon!
