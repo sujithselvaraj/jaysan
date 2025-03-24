@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="about-us-container">
       <NavBar />
-      
+      <ImageSlider/>
       <div className="about-us-content">
         {/* Left Section - Text */}
         <div className="left-section">
