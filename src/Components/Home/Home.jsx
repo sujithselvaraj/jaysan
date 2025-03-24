@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="about-us-container">
       <NavBar />
-      
+      <ImageSlider/>
       <div className="about-us-content">
         {/* Left Section - Text */}
         <div className="left-section">
@@ -27,7 +27,7 @@ const Home = () => {
               <img src="/Assests/icon-vision.webp" alt="Vision" className="info-icon" />
               <div className="info-text">
                 <h2>Our Vision</h2>
-                <p>By empowering organizations with optimized technology and advanced analytics, we contribute to better productivity.</p>
+                <p>Empowering farmers with smart, reliable, and sustainable agricultural solutions for a better tomorrow.</p>
               </div>
             </div>
 
@@ -35,7 +35,7 @@ const Home = () => {
               <img src="/Assests/icon-mission.webp" alt="Ambition" className="info-icon" />
               <div className="info-text">
                 <h2>Our Ambition</h2>
-                <p>We aim to continuously increase our impact on development with our data-driven decision support.</p>
+                <p>To lead in farming technology with innovative products, training, and support for farmers' success.</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ const Home = () => {
               <img src="/Assests/icon-purpose.webp" alt="Purpose" className="info-icon" />
               <div className="info-text">
                 <h2>Our Purpose</h2>
-                <p>We want to improve the world using our passion for technologies.</p>
+                <p>Empowering farmers with efficient and reliable machinery. </p>
               </div>
             </div>
           </div>

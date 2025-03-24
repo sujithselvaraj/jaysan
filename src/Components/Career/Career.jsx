@@ -74,8 +74,8 @@ const Career = () => {
         </div>
 
         <div className="career-div">
-          <h2 className="title">Join Our Team</h2>
-          <p className="description">Fill out the form below to apply for a position with us.</p>
+          <h2 className="career-title">Join Our Team</h2>
+          <p className="career-description">Fill out the form below to apply for a position with us.</p>
 
           {/* Display success or error messages */}
           {successMessage && <p className="success-message">{successMessage}</p>}

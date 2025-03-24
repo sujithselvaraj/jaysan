@@ -42,7 +42,6 @@ const ListCareer = () => {
               <th>Full Name</th>
               <th>Email</th>
               <th>Phone Number</th>
-              <th>Message</th>
               <th>Resume</th>
               <th>Actions</th>
             </tr>
@@ -55,7 +54,6 @@ const ListCareer = () => {
                   <td>{career.fullName}</td>
                   <td>{career.email}</td>
                   <td>{career.phoneNumber}</td>
-                  <td>{career.message}</td>
                   <td>
                     <a
                       href={career.resumeUrl}

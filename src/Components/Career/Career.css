@@ -1,4 +1,5 @@
 .career {
+
   background: #fff;
   display: flex;
   min-height: 100vh;
@@ -80,39 +81,16 @@
 @media (max-width: 720px) {
   .career{
       flex-direction: column;
+
+    background: #fff;
+    display: flex;
+    min-height: 90vh;
+
   }
-
-  .career-div {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 300px;
   
-  }
-
-  .career-text-color {
-      
-      padding-top: 50px;
-    }
-}
-
-.career-form-text {
   
-  color: #fff;
-  margin: 9%;
-  margin-top: 12%;
-  padding-right: 20px;
-}
-.career-text-color {
-  background-color: #3c3c3b;
-}
-
-.career-form-text-para {
-  margin-top: 9%;
-  max-width: 500;
-  text-align: left;
-}
-
-.career-text {
-  font-size: x-large;
-}
+  
+  
+  
+        
+   

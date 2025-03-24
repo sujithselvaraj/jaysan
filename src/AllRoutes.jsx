@@ -23,6 +23,7 @@ import ListCareer from './Components/AdminPortal/Career/ListCareer';
 import ListDealer from './Components/AdminPortal/Dealers/ListDealer';
 import AddDealer from './Components/AdminPortal/Dealers/AddDealer';
 import Gallery from './Components/Gallery/Gallery';
+import Contacts from './Components/AdminPortal/ContactRequest/Contacts';
 
 
 
@@ -65,6 +66,7 @@ const AllRoutes = () => {
                 <Route path="/list-subcategories" element={<ListSubCategory />} />
                < Route path="/update-subcategory/:id" element={<AddSubCategory />} />
                <Route path="/add-subcategory" element={<AddSubCategory />} />
+               <Route path="/admin-contact" element={<Contacts />} />
                 
 
                 <Route path="/login" element={<Login />} />  
