@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-.title {
+.career-title {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
@@ -20,42 +20,39 @@
   color: #3c3c3b;
 }
 
-.description {
+.career-description {
   display: flex;
   text-align: center;
   color: #555;
   margin-bottom: 20px;
 }
 
-.career-form .form-group {
+.career-form .form-group-career {
   margin-bottom: 15px;
-  max-width:max-content;
-  margin-right: 110px;
+  
 }
 
-.form-group label {
+.form-group-career label {
   display: block;
   font-weight: 550;
   margin-bottom: 5px;
 }
 
-.form-group input
+.form-group-career input
  {
   display: flex;
-  width: 100%;
-  padding: 13px;
-  margin-right: 110px;
+  width: 90%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
-.form-group textarea
+.form-group-career textarea
 {
   display: flex;
-  width: 100%;
-  padding: 13px;
-  margin-right: 110px;
+  width: 90%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -63,7 +60,7 @@
 
 }
 
-.submit-btn {
+.submit-career-btn {
   width: 30%;
   padding: 20px;
   font-weight: bolder;
@@ -76,7 +73,7 @@
   margin-right: 110px;
 }
 
-.submit-btn:hover {
+.submit-career-btn:hover {
   background-color: #0056b3;
 }
 

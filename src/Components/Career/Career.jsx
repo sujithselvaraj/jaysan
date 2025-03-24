@@ -82,27 +82,27 @@ const Career = () => {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <form className="career-form" onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="form-group-career">
               <label>Full Name</label>
               <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
             </div>
-            <div className="form-group">
+            <div className="form-group-career">
               <label>Email</label>
               <input type="email" name="email" value={formData.email} onChange={handleChange} required />
             </div>
-            <div className="form-group">
+            <div className="form-group-career">
               <label>Phone Number</label>
               <input type="number" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
             </div>
-            <div className="form-group">
+            <div className="form-group-career">
               <label>Upload Resume</label>
               <input type="file" name="resume" onChange={handleFileChange} required />
             </div>
-            <div className="form-group">
+            <div className="form-group-career">
               <label>Message</label>
               <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about yourself..." rows="4"></textarea>
             </div>
-            <button type="submit" className="submit-btn" disabled={loading}>
+            <button type="submit" className="submit-career-btn" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
