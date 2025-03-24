@@ -1,7 +1,7 @@
 .career {
     background: #fff;
     display: flex;
-    min-height: 100vh;
+    min-height: 90vh;
   }
   
   .career-div {
@@ -48,20 +48,10 @@
     font-size: 16px;
   }
   
-  .form-group-career textarea
-  {
-    display: flex;
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  
-  
-  }
   
   .submit-career-btn {
     width: 30%;
+    margin-top: 20px;
     padding: 20px;
     font-weight: bolder;
     background-color: #086ee6;
