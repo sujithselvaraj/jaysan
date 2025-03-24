@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-
-import "./NavBar.css";
+import React, { useState ,useEffect} from 'react';
+import './NavBar.css';
 import { getAllCategories } from "../services/CategoryService";
-
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
-
   // Fetch categories when the component mounts
   useEffect(() => {
     const fetchCategories = async () => {
@@ -17,11 +14,12 @@ const NavBar = () => {
     fetchCategories();
   }, []);
 
+  
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="/">
-          <img src="/Assests/logo.png" alt="Logo" />
+        <a href='/'>
+          <img src="/Assests/logo.png" alt="Logo"/>
         </a>
       </div>
 
@@ -46,19 +44,17 @@ const NavBar = () => {
             ))}
           </ul>
         </li>
-
         <li><a href="/events">Events</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href="/company">Company</a></li>
+        <li><a href='/resources'>Resources</a></li> 
+        <li><a  href="/about" >Company</a></li> 
         <li><a href="/career">Career</a></li>
-        <li><a href="/dealers">Dealers</a></li>
-   
-        <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
+        <li><a href="/dealers">Dealers</a></li>        
+        <li><a href="/contact" className='client-lets-talk'>Let's Talk</a></li>
       </ul>
 
-      <div className="login-person">
+      <div className='login-person'>
         <a href="/login">
-          <img src="/Assests/icon-login.png" alt="login" />
+          <img src="/Assests/icon-login.png" alt="login"/>
         </a>
       </div>
     </nav>

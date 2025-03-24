@@ -1,51 +1,106 @@
-.subcategory-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+/* Main container styling */
+.subcategory-list-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.subcategory-list-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Table styling */
+.subcategory-table-wrapper {
+  overflow-x: auto;
+}
+
+.subcategory-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.subcategory-list-table th,
+.subcategory-list-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.subcategory-list-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.subcategory-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Button styling */
+.subcategory-update-btn,
+.subcategory-delete-btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.subcategory-update-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.subcategory-delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.subcategory-update-btn:hover {
+  background-color: #0b7dda;
+}
+
+.subcategory-delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .subcategory-list-table th,
+  .subcategory-list-table td {
+    padding: 8px;
+    font-size: 14px;
   }
-  
-  .subcategory-table {
+
+  .subcategory-actions {
+    flex-direction: column;
+  }
+
+  .subcategory-update-btn,
+  .subcategory-delete-btn {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 5px;
   }
-  
-  .subcategory-table th,
-  .subcategory-table td {
-    border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 480px) {
+  .subcategory-list-container {
     padding: 10px;
-    text-align: left;
   }
-  
-  .subcategory-table th {
-    background-color: #4CAF50;
-    color: white;
+
+  .subcategory-list-title {
+    font-size: 20px;
   }
-  
-  .update-btn,
-  .delete-btn {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    margin-right: 5px;
+
+  .subcategory-list-table th,
+  .subcategory-list-table td {
+    font-size: 12px;
   }
-  
-  .update-btn {
-    background-color: #2196F3;
-    color: white;
-  }
-  
-  .delete-btn {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .update-btn:hover {
-    background-color: #0b7dda;
-  }
-  
-  .delete-btn:hover {
-    background-color: #d32f2f;
-  }
-  
+}

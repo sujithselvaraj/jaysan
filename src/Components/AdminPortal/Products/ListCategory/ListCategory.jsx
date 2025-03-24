@@ -5,7 +5,7 @@ import { getAllCategories } from "./CategoryService";
 import AdminNavBar from "../../AdminNavBar/AdminNavBar";
 import Footer from "../../../Footer/Footer";
 import { deleteCategory } from "../ProductService";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const ListCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -16,36 +16,38 @@ const ListCategory = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const data = await getAllCategories();
-    setCategories(data);
+    try {
+      const data = await getAllCategories();
+      setCategories(data);
+    } catch (error) {
+      toast.error("Failed to fetch categories.");
+    }
   };
 
   const handleUpdate = (id) => {
-    navigate(`/update-category/${id}`); // Redirect to AddProduct with category ID
+    navigate(`/update-category/${id}`);
   };
 
-   const handleDelete = async (id) => {
-     if (window.confirm("Are you sure you want to delete this subcategory?")) {
-       try {
-         await deleteCategory(id);
-         setCategories((prevCategories) =>
-           prevCategories.filter((category) => category.id !== id)
-         );
-       } catch (error) {
-         toast.error("Error deleting Category.");
-       }
-     }
-   };
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this category?")) {
+      try {
+        await deleteCategory(id);
+        setCategories((prevCategories) =>
+          prevCategories.filter((category) => category.id !== id)
+        );
+        toast.success("Category deleted successfully.");
+      } catch (error) {
+        toast.error("Error deleting category.");
+      }
+    }
+  };
 
   return (
     <>
-      <div className="category-container">
-       
+      <div className="list-category-container">
         <AdminNavBar />
-        
-        
         <h2>Category List</h2>
-        <table className="category-table">
+        <table className="list-category-table">
           <thead>
             <tr>
               <th>Category ID</th>
@@ -58,11 +60,11 @@ const ListCategory = () => {
               <tr key={category.id}>
                 <td>{category.id}</td>
                 <td>{category.categoryName}</td>
-                <td>
-                  <button className="update-btn" onClick={() => handleUpdate(category.id)}>
+                <td className="list-category-actions">
+                  <button className="list-category-update-btn" onClick={() => handleUpdate(category.id)}>
                     Update
                   </button>
-                  <button className="delete-btn" onClick={() => handleDelete(category.id)}>
+                  <button className="list-category-delete-btn" onClick={() => handleDelete(category.id)}>
                     Delete
                   </button>
                 </td>

@@ -1,5 +1,5 @@
 /* Default Navbar Styling */
-.navbar {
+.admin-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,24 +15,24 @@
 }
 
 /* Logo */
-.logo img {
-  height: 60px; /* Increased logo size */
+.admin-logo img {
+  height: 60px;
 }
 
 /* Navigation Links */
-.nav-links {
+.admin-nav-links {
   list-style: none;
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
-.nav-links li {
-  position: relative; /* For dropdown positioning */
+.admin-nav-links li {
+  position: relative;
   padding: 0 12px;
 }
 
-.nav-links a {
+.admin-nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -40,17 +40,16 @@
   transition: 0.3s;
 }
 
-.nav-links a:hover {
+.admin-nav-links a:hover {
   color: #3F7D58;
 }
 
 /* Dropdown Menu */
-.dropdown {
+.admin-dropdown {
   position: relative;
 }
 
-/* Default dropdown hidden */
-.dropdown-menu {
+.admin-dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -64,27 +63,26 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Show dropdown on hover for desktop */
-.dropdown:hover .dropdown-menu {
+.admin-dropdown:hover .admin-dropdown-menu {
   display: block;
 }
 
-.dropdown-menu li {
+.admin-dropdown-menu li {
   padding: 10px;
 }
 
-.dropdown-menu li a {
+.admin-dropdown-menu li a {
   display: block;
   color: #333;
   text-decoration: none;
   padding: 10px;
 }
 
-.dropdown-menu li a:hover {
+.admin-dropdown-menu li a:hover {
   background-color: #f5f5f5;
 }
 
-.logout-btn {
+.admin-logout-btn {
   background-color: #ff4d4d;
   color: white;
   padding: 12px 25px;
@@ -94,69 +92,73 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: auto; /* Moves it as far left as possible */
+  margin-left: auto;
   margin-right: 10px;
 }
 
-
-
-.logout-btn:hover {
+.admin-logout-btn:hover {
   background-color: #cc0000;
   transform: scale(1.05);
 }
+.admin-lets-talk {
+  background-color: #FFD65A;
+  padding: 9px 20px; /* Fixed spacing */
+  border-radius: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: 0.3s;
+}
 
-/* ----- HAMBURGER MENU ----- */
-.hamburger {
-  display: none; /* Hide by default */
+.admin-lets-talk:hover {
+  background-color: #e6c24d;
+}
+/* Hamburger Menu */
+.admin-hamburger {
+  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
 }
 
-.hamburger .bar {
+.admin-hamburger .admin-bar {
   width: 30px;
   height: 4px;
   background-color: #333;
   transition: 0.3s;
 }
 
-/* Hamburger Open Animation */
-.hamburger.open .bar:nth-child(1) {
+.admin-hamburger.open .admin-bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.hamburger.open .bar:nth-child(2) {
+.admin-hamburger.open .admin-bar:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.open .bar:nth-child(3) {
+.admin-hamburger.open .admin-bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ----- RESPONSIVE DESIGN ----- */
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .nav-links {
+  .admin-nav-links {
     gap: 10px;
   }
 
-  .logout-btn {
+  .admin-logout-btn {
     padding: 10px 20px;
     font-size: 16px;
-    
   }
 }
 
-/* ----- MOBILE VIEW ----- */
 @media (max-width: 768px) {
-  /* Show hamburger */
-  .hamburger {
+  .admin-hamburger {
     display: flex;
     margin-right: 120px;
     margin-left: 120px;
   }
 
-  /* Hide nav-links initially */
-  .nav-links {
+  .admin-nav-links {
     display: none;
     position: absolute;
     top: 60px;
@@ -169,18 +171,16 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  /* Show nav-links when active */
-  .nav-links.active {
+  .admin-nav-links.active {
     display: flex;
   }
 
-  .nav-links li {
+  .admin-nav-links li {
     padding: 10px 0;
   }
 
-  /* Dropdown in Mobile (One-by-One Toggle Effect) */
-  .dropdown-menu {
-    display: none; /* Hide dropdown by default */
+  .admin-dropdown-menu {
+    display: none;
     position: relative;
     width: 100%;
     background: white;
@@ -188,23 +188,27 @@
     border-radius: 0;
   }
 
-  .dropdown-menu.show {
-    display: block; /* Show only when clicked */
+  .admin-dropdown-menu.show {
+    display: block;
+  }
+  .admin-lets-talk{
+    background-color: #FFD65A;
+    padding: 9px;
+    border-radius: 20px;
   }
 
-  .dropdown-menu li {
+  .admin-dropdown-menu li {
     text-align: center;
   }
 
-  /* Center the Logout Button */
-  .login-person {
+  .admin-login-person {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 10px;
   }
 
-  .logout-btn {
+  .admin-logout-btn {
     width: 30%;
     font-size: 18px;
     padding: 12px 0;
@@ -212,7 +216,7 @@
 }
 
 @media (max-width: 480px) {
-  .logout-btn {
+  .admin-logout-btn {
     font-size: 16px;
     padding: 10px 0;
   }
