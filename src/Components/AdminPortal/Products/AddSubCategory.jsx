@@ -16,7 +16,7 @@ const AddSubCategory = () => {
     features: [],
     specificationDetails: [],
     youtubeLink: '',
-    imageFile: null,
+    imageFiles: [], // Store multiple image files
   });
   const [error, setError] = useState('');
   const [categories, setCategories] = useState([]);
@@ -30,20 +30,21 @@ const AddSubCategory = () => {
     fetchCategories();
   }, []);
 
-  // Fetch subcategory details if updating
   useEffect(() => {
     if (id) {
       const fetchSubCategory = async () => {
         const data = await getSubCategoryById(id);
         if (data) {
-          setFormData({
+          setFormData(
+            {
             subCategoryName: data.subCategoryName,
             categoryId: data.categoryId,
             features: data.features || [],
             youtubeLink: data.youtubeLink,
             specificationDetails: Object.entries(data.specificationDetails || {}).map(([key, value]) => ({ key, value })),
-            imageFile: null,
-          });
+            imageFiles: [],
+          }
+        );
         }
       };
       fetchSubCategory();
@@ -51,14 +52,17 @@ const AddSubCategory = () => {
   }, [id]);
 
   // Dropzone setup
+  // Dropzone setup for multiple images
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       setFormData((prevData) => ({
         ...prevData,
-        imageFile: acceptedFiles[0],
+        imageFiles: [...prevData.imageFiles, ...acceptedFiles],
       }));
     },
     accept: 'image/*',
+    multiple: true,
+    maxFiles: 5, // Limit to 5 images
   });
 
   // Handle input changes
@@ -135,12 +139,18 @@ const AddSubCategory = () => {
       ),
     };
 
+    const formDataToSend = new FormData();
+    formDataToSend.append('request', JSON.stringify(subCategoryRequest));
+    formData.imageFiles.forEach((file, index) => {
+      formDataToSend.append(`imageFile${index}`, file);
+    });
+
     try {
       if (id) {
-        await updateSubCategory(id, subCategoryRequest, formData.imageFile);
+        await updateSubCategory(id, formDataToSend);
         toast.success('SubCategory updated successfully!');
       } else {
-        await addSubCategory(subCategoryRequest, formData.imageFile);
+        await addSubCategory(formDataToSend);
         toast.success('SubCategory added successfully!');
       }
 
@@ -150,13 +160,14 @@ const AddSubCategory = () => {
         features: [],
         specificationDetails: [],
         youtubeLink: '',
-        imageFile: null,
+        imageFiles: [],
       });
     } catch (error) {
       setError('There was an error processing the request.');
       toast.error('Error processing request!');
     }
   };
+
 
   return (
     <div>
@@ -183,7 +194,10 @@ const AddSubCategory = () => {
                 ))}
               </select>
             </div>
-
+            <div className="form-group">
+              <label>Youtube link</label>
+              <input type="url" name="youtubeLink" className="input-field" value={formData.youtubeLink} onChange={handleChange} required />
+            </div>
             <div className="form-group">
               <label>Features</label>
               {formData.features.map((feature, index) => (
@@ -206,6 +220,21 @@ const AddSubCategory = () => {
               ))}
               <button type="button" className="submit-button" onClick={handleAddSpecification}>Add Specification</button>
             </div>
+
+            <div className="form-group">
+              <label>Upload Images (Max 5)</label>
+              <div {...getRootProps()} className="dropzone">
+                <input {...getInputProps()} />
+                <p>Drag & drop images here, or click to select files</p>
+              </div>
+              <div className="image-preview">
+                {formData.imageFiles.map((file, index) => (
+                  <img key={index} src={URL.createObjectURL(file)} alt={`preview-${index}`} className="preview-img" />
+                ))}
+              </div>
+            </div>
+
+
 
             <button type="submit" className="submit-button">{id ? 'Update SubCategory' : 'Add SubCategory'}</button>
           </form>

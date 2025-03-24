@@ -1,23 +1,26 @@
 import api from "../../Reducers/AxiosConfig";
 import { toast } from 'react-toastify';
-// Function to add a product with category and image
-export const addProduct = async (categoryRequest, imageFile) => {
-    const formData = new FormData();
-    formData.append('categoryRequest', JSON.stringify(categoryRequest)); // Attach categoryRequest JSON data
-    formData.append('imageFile', imageFile); // Attach the image file
 
-    try {
-      const response = await api.post('/categories', formData, {
-        headers: {
-          'Accept': 'application/json', // Accept header is fine
-        }
-      });
-      return response.data; // Return the response data from the backend (CategoryResponse)
-    } catch (error) {
-      console.error('Error adding product category:', error);
-      throw error; // Throw error to be caught in the component
-    }
+export const addProduct = async (categoryRequest, imageFile) => {
+  const formData = new FormData();
+  
+  
+  const categoryBlob = new Blob([JSON.stringify(categoryRequest)], { type: "application/json" });
+  formData.append("categoryRequest", categoryBlob);
+  formData.append("imageFile", imageFile);
+
+  try {
+    const response = await api.post('/categories', formData, {
+      headers: { "Accept": "application/json",  "Content-Type": "multipart/form-data" },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Error adding product category:', error);
+    throw error;
+  }
 };
+
 
 export const getSubCategoryById = async (id) => {
     try {
@@ -58,11 +61,7 @@ export const getSubCategoryById = async (id) => {
     }
   };
 
-export const addSubCategory = async (subCategoryRequest, imageFile) => {
-    const formData = new FormData();
-    formData.append('request', JSON.stringify(subCategoryRequest));
-    formData.append('imageFile', imageFile);
-  
+  export const addSubCategory = async (formData) => {
     try {
       const response = await api.post('/subcategories', formData, {
         headers: {
@@ -74,6 +73,7 @@ export const addSubCategory = async (subCategoryRequest, imageFile) => {
       throw error.response?.data || 'Error adding subcategory';
     }
   };
+  
 
   export const getAllSubCategories = async () => {
     try {
@@ -85,33 +85,35 @@ export const addSubCategory = async (subCategoryRequest, imageFile) => {
     }
   };
 
-  export const updateSubCategory = async (id, subCategoryRequest, imageFile) => {
-    const formData = new FormData();
-    formData.append('request', JSON.stringify(subCategoryRequest));
-    if (imageFile) {
-      formData.append('imageFile', imageFile);
-    }
-  
+  export const updateSubCategory = async (id, formData) => {
     try {
       const response = await api.put(`/subcategories/${id}`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
       return response.data;
     } catch (error) {
-      console.error('Error updating subcategory:', error);
-      throw error;
+      throw error.response?.data || 'Error updating subcategory';
     }
   };
   
+  
+  
   export const deleteSubCategory = async (id) => {
     try {
-      await api.delete(`/subcategories/${id}`);
-      toast.success('SubCategory deleted successfully!');
+        await api.delete(`/subcategories/${id}`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        toast.success("SubCategory deleted successfully!");
     } catch (error) {
-      console.error('Error deleting subcategory:', error);
-      toast.error('Error deleting subcategory!');
+        console.error("Error deleting subcategory:", error.response?.data || error.message);
+        toast.error("Error deleting subcategory!");
     }
-  };
+};
+
   
   export const deleteCategory = async (id) => {
     try {

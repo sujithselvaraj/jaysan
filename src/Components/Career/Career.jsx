@@ -9,7 +9,8 @@ const Career = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phoneNumber: ""
+    phoneNumber: "",
+    message: "",
   });
   const [resume, setResume] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -45,7 +46,7 @@ const Career = () => {
       console.log("Response:", response);
 
       // Clear form after successful submission
-      setFormData({ fullName: "", email: "", phoneNumber: ""});
+      setFormData({ fullName: "", email: "", phoneNumber: "", message: "" });
       setResume(null);
     } catch (error) {
       setErrorMessage("Failed to submit application. Please try again.");
@@ -63,7 +64,7 @@ const Career = () => {
             <h1>Careers</h1>
             <div className="career-form-text-para">
               <p className="career-text">
-                We value talented and hardworking people. Our team is our biggest strength, and we create a friendly workplace where everyone can grow. If you're looking for a great career, we have opportunities for you!
+                We value talented and hardworking people. Our team is our biggest strength, and we create a friendly workplace where everyone can grow.
               </p>
               <h5 className="career-text">
                 Fill out the form, and our team will contact you soon!
@@ -96,6 +97,10 @@ const Career = () => {
             <div className="form-group-career">
               <label>Upload Resume</label>
               <input type="file" name="resume" onChange={handleFileChange} required />
+            </div>
+            <div className="form-group-career">
+              <label>Message</label>
+              <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about yourself..." rows="4"></textarea>
             </div>
             <button type="submit" className="submit-career-btn" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}

@@ -20,26 +20,26 @@ const AdminNavBar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="logo">
+    <nav className="admin-navbar">
+      <div className="admin-logo">
         <a href="/admin-dashboard">
           <img src="../../Assests/logo.png" alt="Logo" />
         </a>
       </div>
 
-      <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        <span className={`bar ${isOpen ? "open" : ""}`}></span>
-        <span className={`bar ${isOpen ? "open" : ""}`}></span>
-        <span className={`bar ${isOpen ? "open" : ""}`}></span>
+      <div className="admin-hamburger" onClick={() => setIsOpen(!isOpen)}>
+        <span className={`admin-bar ${isOpen ? "open" : ""}`}></span>
+        <span className={`admin-bar ${isOpen ? "open" : ""}`}></span>
+        <span className={`admin-bar ${isOpen ? "open" : ""}`}></span>
       </div>
 
-      <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+      <ul className={`admin-nav-links ${isOpen ? "active" : ""}`}>
         <li
-          className="dropdown"
+          className="admin-dropdown"
           onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
         >
           <a href="#">Products ▾</a>
-          <ul className={`dropdown-menu ${isProductDropdownOpen ? "show" : ""}`}>
+          <ul className={`admin-dropdown-menu ${isProductDropdownOpen ? "show" : ""}`}>
             <li><a href="/add-category">Add Category</a></li>
             <li><a href="/add-subcategory">Add SubCategory</a></li>
             <li><a href="/list-category">List Category</a></li>
@@ -51,13 +51,11 @@ const AdminNavBar = () => {
         <li><a href="about">Company</a></li>
         <li><a href="/admin-list-career">Career</a></li>
         <li><a href="/admin-list-dealers">Dealers</a></li>
-        <li><a href="/contact" className="lets-talk">Let's Talk</a></li>
-        <li className="login-person">
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
-      </li>
+        <li><a href="/contact" className="admin-lets-talk">Let's Talk</a></li>
+        <li className="admin-login-person">
+          <button className="admin-logout-btn" onClick={handleLogout}>Logout</button>
+        </li>
       </ul>
-
-     
     </nav>
   );
 };
