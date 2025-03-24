@@ -98,10 +98,6 @@ const Career = () => {
               <label>Upload Resume</label>
               <input type="file" name="resume" onChange={handleFileChange} required />
             </div>
-            <div className="form-group-career">
-              <label>Message</label>
-              <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about yourself..." rows="4"></textarea>
-            </div>
             <button type="submit" className="submit-career-btn" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </button>
