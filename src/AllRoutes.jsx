@@ -68,6 +68,7 @@ const AllRoutes = () => {
                <Route path="/add-subcategory" element={<AddSubCategory />} />
                <Route path="/admin-contact" element={<Contacts />} />
                 
+
                 <Route path="/login" element={<Login />} />  
 
                 <Route path='/dealers' element={<Dealer/>}/>
