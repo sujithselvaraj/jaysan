@@ -24,6 +24,7 @@ import ListDealer from './Components/AdminPortal/Dealers/ListDealer';
 import AddDealer from './Components/AdminPortal/Dealers/AddDealer';
 import Gallery from './Components/Gallery/Gallery';
 import Contacts from './Components/AdminPortal/ContactRequest/Contacts';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -35,7 +36,7 @@ const AllRoutes = () => {
     return (
        
         <BrowserRouter>
-     
+    <ToastContainer/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 

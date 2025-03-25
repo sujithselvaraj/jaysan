@@ -129,6 +129,12 @@ const AddSubCategory = () => {
   // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.imageFiles.length < 2) {
+      setError('At least 2 images are required.');
+      toast.error('At least 2 images are required!');
+      return;
+    }
     const subCategoryRequest = {
       subCategoryName: formData.subCategoryName,
       categoryId: formData.categoryId,
