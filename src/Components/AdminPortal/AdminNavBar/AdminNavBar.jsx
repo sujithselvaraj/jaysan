@@ -11,9 +11,9 @@ const AdminNavBar = () => {
     try {
       await fetch("http://localhost:8080/logout", {
         method: "POST",
-        credentials: "include", // ✅ Required to destroy session
+        credentials: "include", 
       });
-      navigate("/"); // ✅ Redirect to homepage after logout
+      navigate("/"); 
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -47,7 +47,6 @@ const AdminNavBar = () => {
           </ul>
         </li>
         <li><a href="events">Events</a></li>
-        <li><a href="resources">Resources</a></li>
         <li><a href="about">Company</a></li>
         <li><a href="/admin-list-career">Career</a></li>
         <li><a href="/admin-list-dealers">Dealers</a></li>

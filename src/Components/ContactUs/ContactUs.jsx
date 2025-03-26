@@ -84,15 +84,24 @@ const ContactUs = () => {
       <h2 className="contact-title">
         {submitted ? "Thanks for contacting Jaysan Agri Industrial!" : "We'd love to hear from you "}
       </h2>
-      <h5>Tell us your dream & let's shape it together</h5>
+      <p className="contact-us-text">Tell us your dream & let's shape it together</p>
 
-    
+         {/* FAQ Section */}
+         <div className="faq-section">
+        <h3 className="faq-title">Frequently Asked Questions</h3>
+        {faqs.map((faq, index) => (
+          <div key={index} className="faq-item" onClick={() => setOpenFAQ(openFAQ === index ? null : index)}>
+            <h4 className="faq-question">{faq.question}</h4>
+            {openFAQ === index && <p className="faq-answer">{faq.answer}</p>}
+          </div>
+        ))}
+      </div>
 
 
       {/* Purpose Dropdown */}
       {!purpose ? (
     <div className="purpose-section">
-    <h3 className="purpose-title">What is the purpose of contacting us?</h3>
+    <p className="purpose-title">What is the purpose of contacting us?</p>
 
     {/* ✅ Custom Dropdown */}
     <div className={`dropdown ${isOpen ? "active" : ""}`}>
@@ -177,23 +186,14 @@ const ContactUs = () => {
         </form>
       )}
 
-        {/* FAQ Section */}
-      <div className="faq-section">
-        <h3 className="faq-title">Frequently Asked Questions</h3>
-        {faqs.map((faq, index) => (
-          <div key={index} className="faq-item" onClick={() => setOpenFAQ(openFAQ === index ? null : index)}>
-            <h4 className="faq-question">{faq.question}</h4>
-            {openFAQ === index && <p className="faq-answer">{faq.answer}</p>}
-          </div>
-        ))}
-      </div>
+   
 
       {/* Google Map Section */}
       <div className="map-section">
         <h3 className="map-title">Our Location</h3>
         <iframe title="maps"
           className="map-frame"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093745!2d144.9559283155049!3d-37.8172098797515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xa65bace1e6f5!2sGoogle!5e0!3m2!1sen!2sus!4v1634694387389!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.268816114818!2d77.02110847538204!3d11.093331953267732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f78bd29ddf8f%3A0x162f71b635ee03f3!2sJaysan%20Agri%20Industrial!5e0!3m2!1sen!2sin!4v1742900029139!5m2!1sen!2sin"
           allowFullScreen=""
           loading="lazy"
         ></iframe>

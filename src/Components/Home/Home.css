@@ -130,6 +130,10 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+
+    .about-image{
+        display: none;
+    }
     .about-us-content {
         flex-direction: column; /* Stack items on small screens */
         padding: 2rem 1rem;
@@ -174,3 +178,4 @@
         height: 100%;
     }
 }
+

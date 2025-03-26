@@ -77,16 +77,13 @@
 }
 .client-lets-talk {
   background-color: #FFD65A;
-  padding: 9px 90px; /* Fixed spacing */
+  padding: 9px 90px; 
   border-radius: 10px;
   font-weight: bold;
   white-space: nowrap;
   transition: 0.3s;
 }
 
-.client-lets-talk:hover {
-  background-color: #e6c24d;
-}
 .hamburger {
   display: none;
   flex-direction: column;

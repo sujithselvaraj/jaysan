@@ -128,17 +128,15 @@
   transform: scale(1.05);
 }
 
-/* Expanded Dealer Details */
 .dealer-updated-details {
   margin-top: 10px;
   padding: 12px;
   background: #F9F9F9;
   border-radius: 8px;
   animation: fadeIn 0.3s ease-in-out;
-  display: none; /* Hidden by default */
+  display: none; 
 }
 
-/* Show Expanded Details */
 .dealer-updated-card.dealer-updated-expanded .dealer-updated-details {
   display: block;
 }

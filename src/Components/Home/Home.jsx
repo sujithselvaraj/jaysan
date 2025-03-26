@@ -27,7 +27,7 @@ const Home = () => {
               <img src="/Assests/icon-vision.webp" alt="Vision" className="info-icon" />
               <div className="info-text">
                 <h2>Our Vision</h2>
-                <p>Empowering farmers with smart, reliable, and sustainable agricultural solutions for a better tomorrow.</p>
+                <p className='home-para'>Empowering farmers with smart, reliable, and sustainable agricultural solutions for a better tomorrow.</p>
               </div>
             </div>
 
@@ -35,7 +35,7 @@ const Home = () => {
               <img src="/Assests/icon-mission.webp" alt="Ambition" className="info-icon" />
               <div className="info-text">
                 <h2>Our Ambition</h2>
-                <p>To lead in farming technology with innovative products, training, and support for farmers' success.</p>
+                <p className='home-para'>To lead in farming technology with innovative products, training, and support for farmers' success.</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ const Home = () => {
               <img src="/Assests/icon-purpose.webp" alt="Purpose" className="info-icon" />
               <div className="info-text">
                 <h2>Our Purpose</h2>
-                <p>Empowering farmers with efficient and reliable machinery. </p>
+                <p className='home-para'>Empowering farmers with efficient and reliable machinery. </p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
 
       </div>
 
-      <ImageSlider/>
+    
       <br/>
 
       <VideoSection/>

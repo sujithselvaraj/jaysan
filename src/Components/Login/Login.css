@@ -1,7 +1,4 @@
-/* 🎨 Color Palette */
-/* Removed variables and directly applied colors */
 
-/* ✅ Centering the login form */
 .heading {
   align-items: center;
   justify-content: center;
@@ -9,22 +6,18 @@
   margin-top: 2px;
 
 }
-
-/* ✅ Centering the login form */
 .login-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../../../public/Assests/signin-bg.webp') no-repeat center center/cover; 
+  background: url('../../../public/Assests/signin-bg.jpg') no-repeat center center/cover; 
   height: 80vh;
   width: 100%;
   padding: 10px;
   scroll-behavior: inherit;
 }
-
-/* ✅ Styling the login form */
 .login {
-  background: #ffffff; /* White */
+  background: transparent; /* White */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -38,7 +31,6 @@
   transform: scale(1.02);
 }
 
-/* ✅ Styling form fields */
 .login div {
   margin-bottom: 20px;
   text-align: left;
@@ -57,30 +49,27 @@
 
 /* Input Styling */
 .login input {
-  width: 350px;
+  width: 80%;
   padding: 12px;
-  border: 2px solid #bdbdbd; /* Gray */
+  border: 3px solid #272727; /* Gray */
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 16px ;
   transition: all 0.3s ease-in-out;
-  background: #f0f2f5; /* Light gray */
+  background:transparent;
+  font-weight: bolder;
+
 }
 
 .login input:focus {
-  border-color: #4caf50; /* Green */
-  box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.5);
+  border-color: #272727; /* Green */
+  box-shadow: 0px 0px 8px #272727;
   outline: none;
 }
 
-.login input:hover {
-  background: #e9ecef; /* Slightly darker gray */
-}
 
-/* ✅ Button Styling */
-/* ✅ Centering the login button */
 .login button {
   width: 100%;
-  max-width: 200px; /* Limits button width */
+  max-width: 200px; 
   background: linear-gradient(45deg, #4caf50, #388e3c); /* Green Gradient */
   color: black;
   font-size: 18px;
@@ -90,8 +79,8 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 15px auto 0; /* Centers button */
-  display: block; /* Makes sure it takes full width */
+  margin: 15px auto 0; 
+  display: block;
   text-align: center;
 }
 
@@ -104,15 +93,17 @@
   transform: scale(0.98);
 }
 
+.login input::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
 
-/* ✅ Paragraph text */
 .login p {
   margin-top: 15px;
   font-size: 16px;
   color: #212121; /* Dark gray */
 }
 
-/* ✅ Sign-Up Link Styling */
 .login a {
   text-decoration: none;
 }

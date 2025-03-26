@@ -10,7 +10,7 @@ const Career = () => {
     fullName: "",
     email: "",
     phoneNumber: "",
-    message: "",
+
   });
   const [resume, setResume] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -46,7 +46,7 @@ const Career = () => {
       console.log("Response:", response);
 
       // Clear form after successful submission
-      setFormData({ fullName: "", email: "", phoneNumber: "", message: "" });
+      setFormData({ fullName: "", email: "", phoneNumber: "" });
       setResume(null);
     } catch (error) {
       setErrorMessage("Failed to submit application. Please try again.");
