@@ -16,7 +16,8 @@ const AddSubCategory = () => {
     features: [],
     specificationDetails: [],
     youtubeLink: '',
-    imageFiles: [], // Store multiple image files
+    imageFiles: [],
+    brochure: null
   });
   const [error, setError] = useState('');
   const [categories, setCategories] = useState([]);
@@ -51,8 +52,7 @@ const AddSubCategory = () => {
     }
   }, [id]);
 
-  // Dropzone setup
-  // Dropzone setup for multiple images
+ 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       setFormData((prevData) => ({
@@ -130,11 +130,6 @@ const AddSubCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.imageFiles.length < 2) {
-      setError('At least 2 images are required.');
-      toast.error('At least 2 images are required!');
-      return;
-    }
     const subCategoryRequest = {
       subCategoryName: formData.subCategoryName,
       categoryId: formData.categoryId,
@@ -150,6 +145,10 @@ const AddSubCategory = () => {
     formData.imageFiles.forEach((file, index) => {
       formDataToSend.append(`imageFile${index}`, file);
     });
+    if (formData.brochure) {
+      formDataToSend.append('brochure', formData.brochure);
+    }
+  
 
     try {
       if (id) {
@@ -167,11 +166,20 @@ const AddSubCategory = () => {
         specificationDetails: [],
         youtubeLink: '',
         imageFiles: [],
+        brochure: null
       });
     } catch (error) {
       setError('There was an error processing the request.');
       toast.error('Error processing request!');
     }
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; 
+    setFormData((prevData) => ({
+      ...prevData,
+      brochure: file,
+    }));
   };
 
 
@@ -220,7 +228,7 @@ const AddSubCategory = () => {
               {formData.specificationDetails.map((spec, index) => (
                 <div key={index} className="specification-item">
                   <input type="text" placeholder="Key" value={spec.key} onChange={(e) => handleSpecificationChange(index, 'key', e.target.value)} className="input-field" required />
-                  <input type="text" placeholder="Value" value={spec.value} onChange={(e) => handleSpecificationChange(index, 'value', e.target.value)} className="input-field" required />
+                  <input type="text" placeholder="Value" value={spec.value} onChange={(e) => handleSpecificationChange(index, 'value', e.target.value)} className="input-field"  />
                   <button type="button" className="delete-button" onClick={() => handleDeleteSpecification(index)}>✖</button>
                 </div>
               ))}
@@ -240,7 +248,10 @@ const AddSubCategory = () => {
               </div>
             </div>
 
-
+            <div className="form-group">
+              <label>Upload Brochure</label>
+              <input type="file" name="brochure" className="input-field" accept=".pdf" onChange={handleFileChange}/>
+            </div>
 
             <button type="submit" className="submit-button">{id ? 'Update SubCategory' : 'Add SubCategory'}</button>
           </form>

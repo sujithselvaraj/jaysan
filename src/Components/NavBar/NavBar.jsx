@@ -1,18 +1,18 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState} from 'react';
 import './NavBar.css';
-import { getAllCategories } from "../services/CategoryService";
+// import { getAllCategories } from "../services/CategoryService";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   // Fetch categories when the component mounts
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const categoryData = await getAllCategories();
-      console.log(categoryData)
-      setCategories(categoryData);
-    };
-    fetchCategories();
-  }, []);
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     const categoryData = await getAllCategories();
+  //     console.log(categoryData)
+  //     setCategories(categoryData);
+  //   };
+  //   fetchCategories();
+  // }, []);
 
   
   return (
@@ -32,8 +32,8 @@ const NavBar = () => {
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
         {/* Products Dropdown */}
         <li className="dropdown">
-          <a href="#">Products</a>
-          <ul className="dropdown-menu">
+          <a href="/categories">Products</a>
+          {/* <ul className="dropdown-menu">
             <li>
               <a href="/categories">All Categories</a>
             </li>
@@ -42,10 +42,10 @@ const NavBar = () => {
                 <a href={`/category/${category.id}`}>{category.categoryName}</a>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </li>
         <li><a href="/events">Events</a></li>
-        <li><a href='/resources'>Resources</a></li> 
+        <li><a href='/blog'>Blogs</a></li> 
         <li><a  href="/about" >Company</a></li> 
         <li><a href="/career">Career</a></li>
         <li><a href="/dealers">Dealers</a></li>        

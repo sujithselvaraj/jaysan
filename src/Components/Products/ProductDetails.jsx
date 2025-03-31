@@ -50,8 +50,10 @@ const ProductDetails = () => {
 
         <div className="product-content">
           <div className="product-image">
-            <img src={subCategory.imagePath} alt={subCategory.subCategoryName} />
-          </div>
+          {subCategory.imagePath1 && (
+          <ImageSlider images={[subCategory.imagePath1, subCategory.imagePath2, subCategory.imagePath3,subCategory.imagePath4]} />
+        )}          
+        </div>
 
           <div className="product-info">
             <h2>{subCategory.subCategoryName}</h2>
@@ -64,12 +66,19 @@ const ProductDetails = () => {
                 <p>No features available</p>
               )}
             </ul>
+            <div className='brochure'>
+                <a href={subCategory.brochure} target='blank'download className="product-feature-btn">
+                   Brochure
+                </a>
+                <a href="/contact" className="product-feature-btn">
+                  Send Enquiry
+                </a>
+            </div>
           </div>
         </div>
    {/* Image Slider Section */}
-   {subCategory.imagePath1 && (
-          <ImageSlider images={[subCategory.imagePath1, subCategory.imagePath2, subCategory.imagePath3,subCategory.imagePath4]} />
-        )}
+  
+
         {subCategory.youtubeLink && (
           <div className="video-container">
             <iframe

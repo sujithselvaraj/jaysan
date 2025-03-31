@@ -5,7 +5,6 @@
     padding: 30px;
 }
 
-/* Product Content - Larger Image & Info Layout */
 .product-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr; /* More space for the image */
@@ -144,4 +143,18 @@
     .video-container iframe {
         height: 350px;
     }
+}
+
+.product-feature-btn {
+    background-color: #16C47F;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+.brochure {
+    justify-content: space-between;
 }

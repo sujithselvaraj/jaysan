@@ -27,6 +27,7 @@
 /* Input Fields - Centered Properly */
 .add-dealer-updated-input {
     padding: 12px;
+    margin-bottom: 10px;
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 16px;

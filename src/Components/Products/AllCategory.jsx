@@ -21,9 +21,17 @@ const AllCategory = () => {
 
   return (
     <>
+       <NavBar />
+       <div>
+    <section className="company-header5">
+        <div  className="about-us-title">
+          <h1>Our Products</h1>
+        </div>
+      </section>
+      </div>
       <div className="category-container">
-        <NavBar />
-        <h2 className="category-title">Explore our Products!!</h2>
+     
+
         <div className="category-grid">
           {categories.map((category) => (
             <div key={category.id} className="category-card">
@@ -37,11 +45,11 @@ const AllCategory = () => {
 />
                   <div className="category-info">
                     <h3 className="category-name">{category.categoryName}</h3>
-                    <p className="category-desc">
+                    {/* <p className="category-desc">
                       {category.description.length > 80
                         ? category.description.substring(0, 80) + "..."
                         : category.description}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
 

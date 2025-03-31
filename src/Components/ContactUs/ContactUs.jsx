@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./ContactUs.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import api from "../Reducers/AxiosConfig";
 
 
 const ContactUs = () => {
@@ -12,6 +13,8 @@ const ContactUs = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select an option");
+
+  const topRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -40,7 +43,6 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const formData = {
       purpose,
       name: e.target.name.value,
@@ -52,20 +54,14 @@ const ContactUs = () => {
       status: "PENDING",
       comments: "",
     };
-
+  
     try {
-      const response = await fetch("http://localhost:8080/api/contact/save", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
+      const response = await api.post("/contact/save", formData);
+  
+      if (response.status === 200) {
         setSubmitted(true);
-        alert("Form submitted successfully!");
-        e.preventDefault();
+        setPurpose(""); 
+        setSelectedOption("Select an option"); 
       } else {
         alert("Failed to submit the form. Please try again.");
       }
@@ -74,6 +70,7 @@ const ContactUs = () => {
       alert("An error occurred. Please try again.");
     }
   };
+  
 
   return (
     <>
@@ -81,7 +78,7 @@ const ContactUs = () => {
       <NavBar/>
       <br/>
       <br/>
-      <h2 className="contact-title">
+      <h2 className="contact-title" ref={topRef}>
         {submitted ? "Thanks for contacting Jaysan Agri Industrial!" : "We'd love to hear from you "}
       </h2>
       <p className="contact-us-text">Tell us your dream & let's shape it together</p>
@@ -145,7 +142,7 @@ const ContactUs = () => {
          <div className="machine-selection">
   <label className="machine-label">Select the Machine</label>
   <div className="machine-dropdown-container">
-    <select className="machine-dropdown">
+    <select className="machine-dropdown" name="productInterest">
       <option value="">-- Select Machine --</option>
       <option value="tractor">Tractor</option>
       <option value="harvester">Harvester</option>

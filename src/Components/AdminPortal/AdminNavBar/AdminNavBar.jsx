@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminNavBar.css";
+import api from "../../Reducers/AxiosConfig";
 
 const AdminNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,15 +10,14 @@ const AdminNavBar = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:8080/logout", {
-        method: "POST",
-        credentials: "include", 
-      });
-      navigate("/"); 
+      await api.post("/logout", {}, { withCredentials: true });
     } catch (error) {
       console.error("Logout failed:", error);
     }
+    navigate("/");
+
   };
+  
 
   return (
     <nav className="admin-navbar">
@@ -38,7 +38,7 @@ const AdminNavBar = () => {
           className="admin-dropdown"
           onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
         >
-          <a href="#">Products ▾</a>
+          <a href="/list-category">Products ▾</a>
           <ul className={`admin-dropdown-menu ${isProductDropdownOpen ? "show" : ""}`}>
             <li><a href="/add-category">Add Category</a></li>
             <li><a href="/add-subcategory">Add SubCategory</a></li>
@@ -46,8 +46,10 @@ const AdminNavBar = () => {
             <li><a href="/list-subcategories">List SubCategory</a></li>
           </ul>
         </li>
-        <li><a href="events">Events</a></li>
-        <li><a href="about">Company</a></li>
+        <li><a href="/add-events">Events</a></li>
+
+        <li><a href="/add-blog">Blogs</a></li>
+        <li><a href="/admin-company">Company</a></li>
         <li><a href="/admin-list-career">Career</a></li>
         <li><a href="/admin-list-dealers">Dealers</a></li>
         <li><a href="/admin-contact" className="admin-lets-talk">Let's Talk</a></li>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ImageSlider.css";
+import { getAllCategories } from "../services/CategoryService";
 
 const images = [
   { src: "/Assests/chaff cutter.png", title: "Chaff Cutter" },
@@ -12,6 +13,7 @@ const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    getAllCategories();
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000); // Auto-change image every 3 seconds
@@ -26,7 +28,7 @@ const ImageSlider = () => {
     );
   };
 
-  // Move to next image
+  
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };

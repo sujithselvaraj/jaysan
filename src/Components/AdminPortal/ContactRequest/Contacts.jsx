@@ -14,6 +14,7 @@ const Contacts = () => {
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedStatus, setSelectedStatus] = useState("all");
+  const [comments, setComments] = useState({});
 
   useEffect(() => {
     fetchContacts("all");
@@ -128,7 +129,7 @@ const Contacts = () => {
                         <th>Location</th>
                         <th>Purpose</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th>Comments</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -139,6 +140,7 @@ const Contacts = () => {
                           <td>{contact.location}</td>
                           <td>{contact.purpose}</td>
                           <td>{contact.status}</td>
+                          <td>{contact.comments}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -158,6 +160,7 @@ const Contacts = () => {
                         <th>Product</th>
                         <th>Issue</th>
                         <th>Status</th>
+                        <th>Comments</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -168,6 +171,7 @@ const Contacts = () => {
                           <td>{contact.location}</td>
                           <td>{contact.product}</td>
                           <td>{contact.issue}</td>
+
                           <td>
                             <select
                               className="p-1 border rounded"
@@ -179,12 +183,29 @@ const Contacts = () => {
                               <option value="REJECTED">Rejected</option>
                             </select>
                           </td>
-                          <td>
-                            <textarea
-                              placeholder="Enter comments"
-                              onChange={(e) => updateStatus(contact.id,contact.status, e.target.value)}
-                            />
-                          </td>
+                            <td>
+                              <textarea
+                                value={comments[contact.id] ?? contact.comments ?? ""}
+                                placeholder="Enter comments"
+                                onChange={(e) => {
+                                  setComments((prev) => ({
+                                    ...prev,
+                                    [contact.id]: e.target.value, // Update the specific comment
+                                  }));
+                                }}
+                                onBlur={() => {
+                                  const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                  updateStatus(contact.id, contact.status, updatedComment);
+                                }}
+                                onKeyDown={(e) => {
+                                  if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                    updateStatus(contact.id, contact.status, updatedComment);
+                                  }
+                                }}
+                              />
+                            </td>
                         </tr>
                       ))}
                     </tbody>
@@ -203,6 +224,8 @@ const Contacts = () => {
                         <th>Phone</th>
                         <th>Location</th>
                         <th>Product</th>
+                        <th>Status</th>
+                        <th>Comments</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -226,8 +249,25 @@ const Contacts = () => {
                           </td>
                           <td>
                             <textarea
+                              value={comments[contact.id] ?? contact.comments ?? ""}
                               placeholder="Enter comments"
-                              onChange={(e) => updateStatus(contact.id,contact.status, e.target.value)}
+                              onChange={(e) => {
+                                setComments((prev) => ({
+                                  ...prev,
+                                  [contact.id]: e.target.value, // Update the specific comment
+                                }));
+                              }}
+                              onBlur={() => {
+                                const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                updateStatus(contact.id, contact.status, updatedComment);
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                  updateStatus(contact.id, contact.status, updatedComment);
+                                }
+                              }}
                             />
                           </td>
                         </tr>
@@ -244,9 +284,11 @@ const Contacts = () => {
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Product Interested</th>
+                        <th>Product</th>
                         <th>Phone</th>
                         <th>Location</th>
+                        <th>Status</th>
+                        <th>Comments</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -269,8 +311,25 @@ const Contacts = () => {
                           </td>
                           <td>
                             <textarea
+                              value={comments[contact.id] ?? contact.comments ?? ""}
                               placeholder="Enter comments"
-                              onChange={(e) => updateStatus(contact.id,contact.status, e.target.value)}
+                              onChange={(e) => {
+                                setComments((prev) => ({
+                                  ...prev,
+                                  [contact.id]: e.target.value, // Update the specific comment
+                                }));
+                              }}
+                              onBlur={() => {
+                                const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                updateStatus(contact.id, contact.status, updatedComment);
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                  updateStatus(contact.id, contact.status, updatedComment);
+                                }
+                              }}
                             />
                           </td>
                         </tr>
@@ -291,6 +350,8 @@ const Contacts = () => {
                         <th>Name</th>
                         <th>Phone</th>
                         <th>District</th>
+                        <th>Status</th>
+                        <th>Comments</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -312,8 +373,25 @@ const Contacts = () => {
                           </td>
                           <td>
                             <textarea
+                              value={comments[contact.id] ?? contact.comments ?? ""}
                               placeholder="Enter comments"
-                              onChange={(e) => updateStatus(contact.id,contact.status, e.target.value)}
+                              onChange={(e) => {
+                                setComments((prev) => ({
+                                  ...prev,
+                                  [contact.id]: e.target.value, // Update the specific comment
+                                }));
+                              }}
+                              onBlur={() => {
+                                const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                updateStatus(contact.id, contact.status, updatedComment);
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  const updatedComment = comments[contact.id] ?? contact.comments ?? "";
+                                  updateStatus(contact.id, contact.status, updatedComment);
+                                }
+                              }}
                             />
                           </td>
                         </tr>

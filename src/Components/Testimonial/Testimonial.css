@@ -1,0 +1,123 @@
+.testimonial-container {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2c4f55, #379fa8);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .testimonial-text {
+    flex: 1;
+    text-align: left;
+    color: white;
+  }
+  
+  .testimonial-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffff;
+  }
+  
+  .testimonial-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .testimonial-card {
+    background: #d8d8d8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-img {
+    width: 90%;
+    height: 90%;
+    justify-self: center;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .testimonial-container > div:first-child {
+    flex: 0 0 30%; 
+}
+
+.testimonial-container > div:nth-child(2) {
+    flex: 0 0 70%; 
+}
+
+  .testimonial-review {
+    font-style: italic;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .testimonial-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  
+  .testimonial-product {
+    font-size: 14px;
+    font-weight: bold;
+    margin: initial;
+  }
+  
+  .testimonial-location {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .testimonial-card-div {
+    display: block;
+  }
+  
+
+  @media (max-width: 768px) {
+    .testimonial-container {
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .testimonial-text {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .testimonial-text h2 {
+      font-size: 24px;
+    }
+  
+    .testimonial-text p {
+      font-size: 14px;
+    }
+  
+    .testimonial-container > div:first-child,
+    .testimonial-container > div:nth-child(2) {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  
+    .testimonial-card {
+      max-width: 90%;
+      padding: 15px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  
+    .profile-img {
+      width: 80%;
+      height: auto;
+    }
+  
+    .testimonial-product {
+      font-size: 12px;
+    }
+  }
+  

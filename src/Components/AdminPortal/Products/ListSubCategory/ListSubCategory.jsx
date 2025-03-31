@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdminNavBar from "../../AdminNavBar/AdminNavBar";
 import Footer from "../../../Footer/Footer";
-import { getAllSubCategories, deleteSubCategory } from "../ProductService";
+import { deleteSubCategory } from "../ProductService";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./ListSubCategory.css"; // Updated CSS file

@@ -5,6 +5,8 @@ import './Home.css'; // Make sure to create this CSS file
 import StatsSection from './StatsSection';
 import ImageSlider from './ImageSlider';
 import VideoSection from './VideoSection';
+import Testimonial from '../Testimonial/Testimonial';
+import ProductSlider from '../Products/ProductSlider';
 
 const Home = () => {
   return (
@@ -60,7 +62,7 @@ const Home = () => {
 </div>
 
       </div>
-
+<ProductSlider/>
     
       <br/>
 
@@ -68,7 +70,7 @@ const Home = () => {
       <br/>
       <StatsSection/>
 
-
+      <Testimonial/>
       <Footer />
     </div>
   );

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
+import api from '../Reducers/AxiosConfig';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -11,28 +12,28 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+  
     const formData = new URLSearchParams();
-    formData.append('username', username);
-    formData.append('password', password);
-
+    formData.append("username", username);
+    formData.append("password", password);
+  
     try {
-      const response = await fetch('http://localhost:8080/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData,
-        credentials: 'include'
+      const response = await api.post("/login", formData, {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        withCredentials: true, // Equivalent to `credentials: 'include'`
       });
-
-      if (response.ok) {
-        navigate('/admin-dashboard');
+  
+      if (response.status === 200) {
+        navigate("/admin-dashboard");
       } else {
-        alert('Invalid credentials!');
+        alert("Invalid credentials!");
       }
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
+      alert("Login failed. Please try again.");
     }
   };
+  
 
   return (
     <>

@@ -1,0 +1,50 @@
+.add-testimonial-container {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .testimonial-form input,
+  .testimonial-form textarea {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  .testimonial-form button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .testimonial-table {
+    margin-left: 50px;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    border-collapse: collapse;
+  }
+  
+  .testimonial-table th, .testimonial-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .testimonial-table button {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .testimonial-table button:nth-child(1) {
+    background-color: blue;
+    color: white;
+  }
+  
+  .testimonial-table button:nth-child(2) {
+    background-color: red;
+    color: white;
+  }
+  

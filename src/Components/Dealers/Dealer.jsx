@@ -31,8 +31,14 @@ const Dealer = () => {
   return (
     <div>
       <NavBar />
+      <div>
+    <section className="company-header4">
+        <div  className="about-us-title">
+            <h1>Our Dealers</h1>
+        </div>
+      </section>
+      </div>
       <div className="dealer-updated-container">
-        <h2 className="dealer-updated-title">Our Valuable Dealers</h2>
         
         {/* Search Bar */}
         <div className="dealer-updated-search-container">
@@ -50,18 +56,19 @@ const Dealer = () => {
         <div className="dealer-updated-list">
           {filteredDealers.map((dealer, index) => (
             <div key={index} className={`dealer-updated-card ${expandedIndex === index ? 'dealer-updated-expanded' : ''}`}>
-              <h3>{dealer.dealerName}</h3>
-              <p>Email: {dealer.dealerEmail}</p>
-              <p>Phone: {dealer.dealerPhoneNumber}</p>
+              <h2>{dealer.dealerName}</h2>
+              <p> {dealer.dealerLocation}, {dealer.dealerState}</p>
+              <p> {dealer.dealerPhoneNumber}</p>
               <button onClick={() => handleExpand(index)}>
                 {expandedIndex === index ? 'View Less' : 'View More'}
               </button>
 
               {expandedIndex === index && (
                 <div className="dealer-updated-details">
-                  <p>Address: {dealer.addressLine1}, {dealer.addressLine2}</p>
-                  <p>Location: {dealer.dealerLocation}</p>
-                  <p>State: {dealer.dealerState}</p>
+                  <p>Address :  {dealer.addressLine1}, {dealer.addressLine2}</p>
+          
+                  <p>Email : {dealer.dealerEmail}</p>
+                  {/* <p>State: {dealer.dealerState}</p> */}
                 </div>
               )}
             </div>
