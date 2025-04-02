@@ -130,3 +130,78 @@
 
 }
 
+/* Infrastructure Section */
+.infrastructure-section {
+  background: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.infrastructure-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.infrastructure-description {
+  font-size: 1.3rem;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+/* Grid Layout for Infrastructure Cards */
+.infrastructure-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .infrastructure-grid {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+.infrastructure-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.infrastructure-card h3 {
+  font-size: 1.8rem;
+  color: #005f23;
+  margin-bottom: 15px;
+}
+
+.infrastructure-card p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.infrastructure-icon {
+  font-size: 3rem;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .infrastructure-title {
+      font-size: 2rem;
+  }
+  
+  .infrastructure-card h3 {
+      font-size: 1.5rem;
+  }
+  
+  .infrastructure-card p {
+      font-size: 1rem;
+  }
+}

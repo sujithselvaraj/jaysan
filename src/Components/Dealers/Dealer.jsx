@@ -58,7 +58,7 @@ const Dealer = () => {
             <div key={index} className={`dealer-updated-card ${expandedIndex === index ? 'dealer-updated-expanded' : ''}`}>
               <h2>{dealer.dealerName}</h2>
               <p> {dealer.dealerLocation}, {dealer.dealerState}</p>
-              <p> {dealer.dealerPhoneNumber}</p>
+              {/* <p> {dealer.dealerPhoneNumber}</p> */}
               <button onClick={() => handleExpand(index)}>
                 {expandedIndex === index ? 'View Less' : 'View More'}
               </button>

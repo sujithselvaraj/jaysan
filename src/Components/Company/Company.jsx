@@ -32,6 +32,40 @@ export default function Company() {
       </div>
            
            <br/>
+           <div className="infrastructure-section">
+    <h2 className="infrastructure-title">Our Infrastructure</h2>
+    <p className="infrastructure-description">
+        At <b>Jaysan Agri Industrial</b>, our state-of-the-art facilities ensure efficient production, high quality, and timely delivery. 
+        Our infrastructure includes advanced machinery, a robust supply chain, and strict quality control measures.
+    </p>
+
+    <div className="infrastructure-grid">
+        <div className="infrastructure-card">
+            <div className="infrastructure-icon">🏭</div>
+            <h3>Manufacturing Facilities</h3>
+            <p>30+ advanced machines operating in our high-tech manufacturing plants.</p>
+        </div>
+
+        <div className="infrastructure-card">
+            <div className="infrastructure-icon">🚚</div>
+            <h3>Logistics & Supply Chain</h3>
+            <p>Efficient storage and distribution network ensuring on-time delivery.</p>
+        </div>
+
+        <div className="infrastructure-card">
+            <div className="infrastructure-icon">🛠️</div>
+            <h3>Advanced Machinery</h3>
+            <p>Cutting-edge CNC, laser cutting, and welding machines for precision engineering.</p>
+        </div>
+
+        <div className="infrastructure-card">
+            <div className="infrastructure-icon">✅</div>
+            <h3>Quality Control</h3>
+            <p>Stringent testing and inspection processes to maintain product excellence.</p>
+        </div>
+    </div>
+</div>
+
            <br/>
       <div className="company-cta">
         <h2 className="company-cta-title">Ready to Elevate Your Farming Experience?</h2>

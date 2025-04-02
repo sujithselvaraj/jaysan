@@ -31,7 +31,7 @@ const NavBar = () => {
 
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
         {/* Products Dropdown */}
-        <li className="dropdown">
+        <li>
           <a href="/categories">Products</a>
           {/* <ul className="dropdown-menu">
             <li>
