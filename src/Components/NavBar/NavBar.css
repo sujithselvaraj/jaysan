@@ -12,6 +12,10 @@
   border-bottom: 2px solid #ddd;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+.nav-links a.active {
+  color: #16C47F;
+}
+
 
 .logo img {
   height: 50px;

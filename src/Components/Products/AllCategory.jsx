@@ -45,16 +45,18 @@ const AllCategory = () => {
 />
                   <div className="category-info">
                     <h3 className="category-name">{category.categoryName}</h3>
-                    {/* <p className="category-desc">
+                    <p className="category-desc">
                       {category.description.length > 80
                         ? category.description.substring(0, 80) + "..."
                         : category.description}
-                    </p> */}
+                    </p>
                   </div>
                 </div>
 
                 {/* Back Side */}
                 <div className="category-card-back">
+                <img src={category.imageUrl} alt="Blurred background" className="blurred-bg-image" />
+                <div className="category-back-content">
                   <div className="category-info">
                     <h3 className="category-name">{category.categoryName}</h3>
                     <p className="category-desc">{category.description}</p>
@@ -64,6 +66,10 @@ const AllCategory = () => {
                     >
                       View More
                     </button>
+                    <a href="/contact" className="enquiry-button">
+                  Send Enquiry
+                </a>
+                </div>
                   </div>
                 </div>
               </div>

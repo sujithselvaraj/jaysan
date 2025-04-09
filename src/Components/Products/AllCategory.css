@@ -124,7 +124,7 @@
     border-radius: 10px;
     cursor: pointer;
     margin-top: 15px;
-    transition: background 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
 }
 
 .view-more-btn:hover {
@@ -169,3 +169,44 @@
     width: 100%;  
     height: 300px; 
 }
+
+.enquiry-button {
+    background-color: #16C47F;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* margin-left: 30px;  */
+}
+
+.category-card-back {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .blurred-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keep the image contained */
+    filter: blur(5px);
+    opacity: 0.7; /* Optional: lower brightness to make text stand out */
+    z-index: 1;
+  }
+  
+  .category-back-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+  }

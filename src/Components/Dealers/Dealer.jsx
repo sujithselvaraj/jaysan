@@ -39,7 +39,8 @@ const Dealer = () => {
       </section>
       </div>
       <div className="dealer-updated-container">
-        
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1WtFNFJFjoQDkCtZ4bzyNImuVLcqChK4&ehbc=2E312F" width="640" height="480"></iframe>
+
         {/* Search Bar */}
         <div className="dealer-updated-search-container">
           <input
